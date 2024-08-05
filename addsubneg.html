@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کۆکردنەوە و لێدەرکردنی ژمارە نەرێیەکان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .number-line {
+            position: relative;
+            height: 4px;
+            background-color: #4a5568;
+            margin: 50px 0;
+        }
+        .number-line::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            border: 8px solid transparent;
+            border-left-color: #4a5568;
+        }
+        .number-line .mark {
+            position: absolute;
+            top: -25px;
+            transform: translateX(50%);
+        }
+        .number-line .mark::after {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            height: 12px;
+            border-left: 2px solid #4a5568;
+        }
+        #numberLineAnimation {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ed8936;
+            border-radius: 50%;
+            top: -8px;
+            transition: right 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 text-gray-800">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-3xl shadow-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center text-orange-800 fade-in">کۆکردنەوە و لێدەرکردنی ژمارە نەرێیەکان</h1>
+        
+        <section class="mb-12 bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-orange-700">بەکارهێنانی هێڵی ژمارە</h2>
+            <p class="text-lg mb-4">هێڵی ژمارە ئامرازێکی بەسوودە بۆ کۆکردنەوە و لێدەرکردنی ژمارە نەرێیەکان. با سەیری چەند نموونەیەک بکەین:</p>
+            
+            <div class="number-line">
+                <div class="mark" style="right: 0%;">-5</div>
+                <div class="mark" style="right: 20%;">-3</div>
+                <div class="mark" style="right: 40%;">-1</div>
+                <div class="mark" style="right: 60%;">1</div>
+                <div class="mark" style="right: 80%;">3</div>
+                <div class="mark" style="right: 100%;">5</div>
+                <div id="numberLineAnimation"></div>
+            </div>
+            
+            <div class="mt-8 space-y-4">
+                <div>
+                    <button class="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition duration-300" onclick="animateNumberLine(-2, 3)">-٢ + ٣</button>
+                    <span id="result1" class="ml-4 font-bold"></span>
+                </div>
+                <div>
+                    <button class="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition duration-300" onclick="animateNumberLine(1, -4)">١ + (-٤)</button>
+                    <span id="result2" class="ml-4 font-bold"></span>
+                </div>
+                <div>
+                    <button class="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition duration-300" onclick="animateNumberLine(-3, -2)">-٣ + (-٢)</button>
+                    <span id="result3" class="ml-4 font-bold"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 bg-gradient-to-r from-green-100 to-teal-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-teal-700">ڕێساکانی کۆکردنەوە و لێدەرکردن</h2>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+                <li>کۆکردنەوەی ژمارەیەکی ئەرێنی: بڕۆ بۆ ڕاست</li>
+                <li>کۆکردنەوەی ژمارەیەکی نەرێی: بڕۆ بۆ چەپ</li>
+                <li>لێدەرکردنی ژمارەیەکی ئەرێنی: بڕۆ بۆ چەپ</li>
+                <li>لێدەرکردنی ژمارەیەکی نەرێی: بڕۆ بۆ ڕاست</li>
+            </ul>
+        </section>
+
+        <section class="mb-12 bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-700">ڕاهێنان</h2>
+            <p class="text-lg mb-4">با پێکەوە ڕاهێنان لەسەر کۆکردنەوە و لێدەرکردنی ژمارە نەرێیەکان بکەین:</p>
+            <div id="practiceQuestions" class="space-y-4">
+                <!-- ڕاهێنانەکان لێرە زیاد دەکرێن -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function animateNumberLine(start, change) {
+            const animation = document.getElementById('numberLineAnimation');
+            const totalWidth = document.querySelector('.number-line').offsetWidth;
+            const startPosition = (start + 5) / 10 * totalWidth;
+            const endPosition = (start + change + 5) / 10 * totalWidth;
+            
+            animation.style.right = `${totalWidth - startPosition}px`;
+            setTimeout(() => {
+                animation.style.right = `${totalWidth - endPosition}px`;
+            }, 100);
+            
+            const resultElement = document.getElementById(`result${Math.abs(start)}`);
+            resultElement.textContent = `ئەنجام: ${start + change}`;
+        }
+
+        const questions = [
+            { 
+                question: "-٥ + ٣ چەندە؟", 
+                answer: "-٢", 
+                options: ["-٢", "٢", "-٨", "٨"],
+                explanation: "کاتێک ژمارەیەکی ئەرێنی (٣) لەگەڵ ژمارەیەکی نەرێی (-٥) کۆ دەکەینەوە، ٣ یەکە بۆ ڕاست دەڕۆین. -٥ + ٣ = -٢"
+            },
+            { 
+                question: "٤ + (-٧) چەندە؟", 
+                answer: "-٣", 
+                options: ["-٣", "٣", "-١١", "١١"],
+                explanation: "کاتێک ژمارەیەکی نەرێی (-٧) لەگەڵ ژمارەیەکی ئەرێنی (٤) کۆ دەکەینەوە، ٧ یەکە بۆ چەپ دەڕۆین. ٤ + (-٧) = -٣"
+            },
+            { 
+                question: "-٢ - ٣ چەندە؟", 
+                answer: "-٥", 
+                options: ["-٥", "٥", "-١", "١"],
+                explanation: "لێدەرکردنی ژمارەیەکی ئەرێنی (٣) لە ژمارەیەکی نەرێی (-٢)، ٣ یەکە بۆ چەپ دەڕۆین. -٢ - ٣ = -٥"
+            },
+            { 
+                question: "-٦ - (-٤) چەندە؟", 
+                answer: "-٢", 
+                options: ["-٢", "٢", "-١٠", "١٠"],
+                explanation: "لێدەرکردنی ژمارەیەکی نەرێی (-٤) لە ژمارەیەکی نەرێی (-٦)، ٤ یەکە بۆ ڕاست دەڕۆین. -٦ - (-٤) = -٢"
+            }
+        ];
+
+        const practiceSection = document.getElementById('practiceQuestions');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'bg-white p-4 rounded-lg shadow-lg';
+            questionDiv.innerHTML = `
+                <p class="font-bold mb-2">${index + 1}. ${q.question}</p>
+                <div class="grid grid-cols-2 gap-2">
+                    ${q.options.map(option => `
+                        <button class="answer-option bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600 transition duration-300">${option}</button>
+                    `).join('')}
+                </div>
+                <p class="feedback mt-2 hidden"></p>
+                <p class="explanation mt-2 hidden text-sm text-gray-600"></p>
+            `;
+            practiceSection.appendChild(questionDiv);
+
+            const buttons = questionDiv.querySelectorAll('.answer-option');
+            const feedback = questionDiv.querySelector('.feedback');
+            const explanation = questionDiv.querySelector('.explanation');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (button.textContent === q.answer) {
+                        feedback.textContent = 'ئافەرین! وەڵامەکەت دروستە.';
+                        feedback.className = 'feedback mt-2 text-green-600 font-bold';
+                    } else {
+                        feedback.textContent = `ببورە، وەڵامەکەت دروست نییە. وەڵامی ڕاست ${q.answer} بوو.`;
+                        feedback.className = 'feedback mt-2 text-red-600 font-bold';
+                    }
+                    explanation.textContent = q.explanation;
+                    feedback.classList.remove('hidden');
+                    explanation.classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
