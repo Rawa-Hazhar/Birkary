@@ -8,9 +8,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
         
         :root {
-            --primary-color: #4a90e2;
+            --primary-color: #1a5f7a;
             --secondary-color: #50c878;
-            --accent-color: #ff6b6b;
+            --accent-color: #57c5b6;
             --bg-color: #f0f8ff;
             --text-color: #333;
         }
@@ -36,63 +36,30 @@
         }
         
         header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    text-align: right;
-    padding: 15px 20px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10%),
-                        radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10%);
-            background-size: 50px 50px;
-            background-position: 0 0, 25px 25px;
-            animation: backgroundMove 20s linear infinite;
-            opacity: 0.5;
-        }
-        
-        @keyframes backgroundMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-50px, -50px); }
+            background-color: var(--primary-color);
+            color: white;
+            text-align: right;
+            padding: 15px 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
         }
         
         h1 {
-    font-size: 2.5em;
-    margin: 0;
-    padding: 10px 20px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    text-align: right;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-      h1:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-    transform: translateX(-5px);
-}  
-        
-        @keyframes titleGlow {
-            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px var(--primary-color), 0 0 35px var(--primary-color), 0 0 40px var(--primary-color), 0 0 50px var(--primary-color), 0 0 75px var(--primary-color); }
-            to { text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px var(--primary-color), 0 0 17.5px var(--primary-color), 0 0 20px var(--primary-color), 0 0 25px var(--primary-color), 0 0 37.5px var(--primary-color); }
+            font-size: 2.5em;
+            margin: 0;
+            padding: 10px 20px;
+            color: var(--accent-color);
+            text-align: right;
         }
         
         .subtitle {
-    font-size: 1em;
-    margin-right: 15px;
-    opacity: 0.9;
-}
+            font-size: 1.2em;
+            margin-right: 15px;
+            color: white;
+        }
         
         .beta-warning {
             background-color: var(--accent-color);
@@ -100,26 +67,6 @@
             padding: 10px;
             text-align: center;
             font-weight: bold;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .beta-warning::after {
-            content: '⚠️ قۆناغی تاقیکردنەوە ⚠️';
-            position: absolute;
-            top: 50%;
-            left: -100%;
-            width: 300%;
-            text-align: center;
-            transform: translateY(-50%);
-            animation: scroll 20s linear infinite;
-            white-space: nowrap;
-            opacity: 0.2;
-        }
-        
-        @keyframes scroll {
-            0% { left: 100%; }
-            100% { left: -100%; }
         }
         
         .content {
@@ -156,22 +103,6 @@
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
             margin-bottom: 20px;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-        
-        h2:hover::after {
-            width: 100%;
         }
         
         ul {
@@ -195,72 +126,10 @@
             color: var(--primary-color);
             text-decoration: none;
             transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: var(--primary-color);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease;
         }
         
         a:hover {
             color: var(--secondary-color);
-        }
-        
-        a:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 10%);
-            background-size: 10px 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .cta-button:hover::before {
-            opacity: 1;
-            animation: sparkle 2s linear infinite;
-        }
-        
-        @keyframes sparkle {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(20px, 20px); }
         }
         
         .feature-grid {
@@ -277,6 +146,7 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid var(--accent-color);
         }
         
         .feature-item:hover {
@@ -303,16 +173,18 @@
     </div>
     
     <header>
-        <div class="container">
-            <h1>ژێدەر</h1>
-            <p class="subtitle">سەرچاوەی داهێنەرانەی فێربوون بۆ هەمووان </p>
-            <a href="#join" class="cta-button">  بەشداربە لە گەشتی بێ کۆتایی زانست</a>
-        </div>
+        <h1>ژێدەر</h1>
+        <p class="subtitle">سەرچاوەی داهێنەرانەی فێربوون بۆ هەمووان</p>
     </header>
 
     <div class="container content">
         <main class="main-content">
             <h2>بەخێربێن بۆ ژێدەری زانست و فێربوون</h2>
+            
+            <h3>پێناسەی ژێدەر</h3>
+            <p>وشەی "ژێدەر" لە زمانی کوردیدا بە مانای "سەرچاوە" دێت. ئێمە ئەم ناوەمان هەڵبژاردووە چونکە دەمانەوێت ببینە سەرچاوەیەکی بەهێز و باوەڕپێکراو بۆ فێربوون و زانست بە زمانی کوردی.</p>
+
+            <h3>بیرۆکەی ژێدەر</h3>
             <p>ژێدەر سەرچاوەیەکی نوێ و داهێنەرانەیە بۆ فێربوونی بیرکاری و زانستە سروشتییەکان، کە لە قۆناغە سەرەتاییەکانی خوێندنەوە تا ئاستە باڵاکانی زانکۆ دەگرێتەوە. لێرەدا، هەر فێرخوازێکی کورد دەتوانێت بە شێوازێکی نوێ و کاریگەر فێری زانست ببێت.</p>
             
             <div class="feature-grid">
@@ -324,7 +196,7 @@
                 <div class="feature-item">
                     <span class="feature-icon">🌍</span>
                     <h3>بە زمانی کوردی</h3>
-                    <p> گەورەترین سەرچاوەی کوردی بۆ زانست و پەروەردە</p>
+                    <p>گەورەترین سەرچاوەی کوردی بۆ زانست و پەروەردە</p>
                 </div>
                 <div class="feature-item">
                     <span class="feature-icon">🤝</span>
