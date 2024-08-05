@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بەکارهێنانی ژمێرەر</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Naskh Arabic', 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-2xl">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center text-indigo-800">بەکارهێنانی ژمێرەر</h1>
+        
+        <section id="intro" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-700">پێشەکی</h2>
+            <p class="mb-4 text-gray-700 leading-relaxed text-right">کاتێک ژمێرەر بەکاردەهێنین، زۆر گرنگە کە BODMAS یان BIDMAS بە دروستی جێبەجێ بکەین. ژمێرەرە زانستییەکان بە شێوەیەکی خۆکار کردارەکان بە ڕیزبەندی دروست ئەنجام دەدەن، بەڵام هەندێک جار پێویستمان بە کەوانەی زیاتر دەبێت.</p>
+        </section>
+
+        <section id="bodmasOnCalculator" class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">BODMAS/BIDMAS لە ژمێرەردا</h2>
+            <p class="mb-4 text-gray-700 text-right">با نموونەیەک ببینین:</p>
+            <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+                <p class="text-lg font-semibold mb-2 text-center">٢ + ٤ ÷ ١٠ - ٧</p>
+                <p class="mb-4 text-right">ئەگەر ٢ + ٤ ÷ ١٠ - ٧ وەک خۆی لە ژمێرەردا دابنێین، ژمێرەرەکە BODMAS/BIDMAS بەکاردەهێنێت و یەکەم جار دابەشکردنەکە ئەنجام دەدات. ئەمە دەبێتە هۆی وەڵامێکی هەڵە.</p>
+                <p class="mb-4 text-right">بۆ دڵنیابوون لە دروستی هاوکێشەکە، دەبێت دوگمەی کەرت بەکاربهێنین یان کەوانە بەکاربهێنین:</p>
+                <p class="text-center font-bold">٢ + ٤ ÷ (١٠ - ٧) یان (٢ + ٤) ÷ (١٠ - ٧)</p>
+            </div>
+        </section>
+
+        <section id="indicesOnCalculator" class="mb-8 bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-green-700">ژماردنی توان لە ژمێرەردا</h2>
+            <p class="mb-4 text-gray-700 text-right">کاتێک ژمارە نەرێیەکان دەکەینە توان، دەبێت کەوانە بەکاربهێنین. بۆ نموونە:</p>
+            <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+                <p class="text-lg font-semibold mb-2 text-center">(-٢)²</p>
+                <p class="mb-4 text-right">بۆ ژماردنی دووجای -٢ لە ژمێرەردا، دەبێت (-٢)² دابنێین. ئەمە وەڵامی دروستی ٤ دەدات. ئەگەر کەوانە بەکارنەهێنین، وەڵامەکە دەبێتە -٤، چونکە BODMAS/BIDMAS توانەکە پێش لێدەرکردن جێبەجێ دەکات.</p>
+            </div>
+        </section>
+
+        <section id="example" class="mb-8 bg-gradient-to-r from-yellow-50 to-green-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-yellow-700">نموونە</h2>
+            <p class="mb-4 text-gray-700 text-right">با بەهای x² + ٧ بدۆزینەوە کاتێک x = -٣</p>
+            <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+                <p class="mb-4 text-right">بە بەکارهێنانی BODMAS/BIDMAS، وەڵامەکە بەم شێوەیە دەبێت:</p>
+                <ol class="list-decimal list-inside text-right space-y-2">
+                    <li>(-٣)² = ٩ (یەکەم جار توان)</li>
+                    <li>٩ + ٧ = ١٦ (پاشان کۆکردنەوە)</li>
+                </ol>
+                <p class="mt-4 text-right">لە ژمێرەردا، ئەگەر -٣² + ٧ دابنێین، وەڵامەکە دەبێتە -٢، چونکە ژمێرەرەکە بە خۆکار تێناگات کە نیشانەی نەرێیەکە پەیوەندی بە ژمارە نەرێیەکەوە هەیە نەک لێدەرکردن.</p>
+                <p class="mt-4 text-right">بۆ وەرگرتنی وەڵامی دروست، دەبێت کەوانەی زیاتر بەکاربهێنین. داخڵکردنی (-٣)² + ٧ لە ژمێرەردا وەڵامی دروستی ١٦ دەدات.</p>
+            </div>
+        </section>
+
+        <section id="practice" class="mb-8 bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-pink-700">ڕاهێنان</h2>
+            <p class="mb-4 text-gray-700 text-right">با پێکەوە ڕاهێنان لەسەر بەکارهێنانی ژمێرەر بکەین. هەوڵ بدە ئەم هاوکێشانە چارەسەر بکەیت:</p>
+            <div id="practiceQuestions" class="space-y-4">
+                <!-- هاوکێشەکان لێرە زیاد دەکرێن -->
+            </div>
+        </section>
+
+        <section id="keyFact" class="mb-8 bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-700">خاڵی گرنگ</h2>
+            <p class="text-lg font-semibold text-center">کاتێک ژمێرەر بەکاردەهێنیت، کەوانە دابنێ لە دەوری ژمارە نەرێیەکان پێش ئەوەی بیانکەیتە توان.</p>
+        </section>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "٥² + ٣ × ٢", answer: 31 },
+            { question: "(-٤)² - ٧", answer: 9 },
+            { question: "(٦ + ٢) ÷ ٢²", answer: 2 },
+            { question: "٣ × (-٢)² + ١", answer: 13 }
+        ];
+
+        const practiceSection = document.getElementById('practiceQuestions');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.innerHTML = `
+                <p class="font-bold mb-2">${index + 1}. ${q.question}</p>
+                <input type="number" class="border-2 border-purple-500 rounded-lg p-2 w-full" placeholder="وەڵامەکەت لێرە بنووسە">
+                <button class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg mt-2 w-full check-answer">پشکنینی وەڵام</button>
+                <p class="feedback mt-2 hidden"></p>
+            `;
+            practiceSection.appendChild(questionDiv);
+
+            const checkButton = questionDiv.querySelector('.check-answer');
+            const input = questionDiv.querySelector('input');
+            const feedback = questionDiv.querySelector('.feedback');
+
+            checkButton.addEventListener('click', () => {
+                const userAnswer = parseFloat(input.value);
+                if (Math.abs(userAnswer - q.answer) < 0.01) {
+                    feedback.textContent = 'ئافەرین! وەڵامەکەت دروستە.';
+                    feedback.className = 'feedback mt-2 text-green-600 font-bold';
+                } else {
+                    feedback.textContent = `ببورە، وەڵامەکەت دروست نییە. وەڵامی ڕاست ${q.answer} بوو.`;
+                    feedback.className = 'feedback mt-2 text-red-600 font-bold';
+                }
+                feedback.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
