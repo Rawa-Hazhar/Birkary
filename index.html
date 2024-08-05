@@ -38,10 +38,13 @@
         header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    text-align: center;
-    padding: 25px 0;
+    text-align: right;
+    padding: 15px 20px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
         
         header::before {
@@ -65,11 +68,20 @@
         }
         
         h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    animation: titleGlow 2s ease-in-out infinite alternate;
+    font-size: 2.5em;
+    margin: 0;
+    padding: 10px 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: right;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
+      h1:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: translateX(-5px);
+}  
         
         @keyframes titleGlow {
             from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px var(--primary-color), 0 0 35px var(--primary-color), 0 0 40px var(--primary-color), 0 0 50px var(--primary-color), 0 0 75px var(--primary-color); }
@@ -77,8 +89,9 @@
         }
         
         .subtitle {
-    font-size: 1.2em;
-    margin-bottom: 15px;
+    font-size: 1em;
+    margin-right: 15px;
+    opacity: 0.9;
 }
         
         .beta-warning {
