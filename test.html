@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تاقیکردنەوەی ژمارە تەواوەکان</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+            background: linear-gradient(45deg, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a148c;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .question {
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .question:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px 0;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        .option.selected {
+            background: linear-gradient(to right, #1fd1f9 0%, #b621fe 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .correct {
+            color: #4CAF50;
+        }
+        .incorrect {
+            color: #F44336;
+        }
+        .explanation {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+        #submitBtn {
+            background: linear-gradient(to right, #4a148c 0%, #880e4f 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 20px auto;
+            border-radius: 25px;
+            cursor: pointer;
+            display: block;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        #submitBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        #result {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>تاقیکردنەوەی ژمارە تەواوەکان</h1>
+        <div id="quiz"></div>
+        <button id="submitBtn">پشکنینی وەڵامەکان</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "لە ژمارەی ٣,٤٦٢ دا، ٦ چ بەهایەکی هەیە؟",
+                options: ["٦ هەزار", "٦ سەد", "٦ دە"],
+                answer: 1,
+                explanation: "لە ژمارەی ٣,٤٦٢ دا، ٦ لە خانەی سەدەکاندایە، کەواتە بەهاکەی ٦ سەدە."
+            },
+            {
+                question: "ژمارەی (سێ ملیۆن و چوار سەد و پەنجا و یەک هەزار و حەفتا و سێ) بە ڕەقەم چۆن دەنووسرێت؟",
+                options: ["٣,٤٥١,٠٧٣", "٣٤٥,١٧٣", "٣٤,٠٠٥,١٧٣"],
+                answer: 0,
+                explanation: "٣ ملیۆن = ٣,٠٠٠,٠٠٠، ٤٥١ هەزار = ٤٥١,٠٠٠، ٧٣ = ٧٣. کەواتە ٣,٤٥١,٠٧٣."
+            },
+            {
+                question: "ئەم ژمارانە بە گوێرەی قەبارە ڕیز بکە، لە بچووکەوە بۆ گەورە: -٧، -٩، ٣، -١",
+                options: ["-١، ٣، -٧، -٩", "-٩، -٧، -١، ٣", "-٩، -٧، ٣، -١"],
+                answer: 1,
+                explanation: "-٩ بچووکترینیانە، پاشان -٧، پاشان -١، و لە کۆتاییدا ٣ گەورەترینیانە."
+            },
+            {
+                question: "نیشانەی دروست دابنێ: ٤٧ ___ ٣٦",
+                options: [">", "<", "="],
+                answer: 0,
+                explanation: "٤٧ گەورەترە لە ٣٦، کەواتە نیشانەی (>) بەکاردێت."
+            },
+            {
+                question: "٤٧ + ٢٣٣ چەندە؟",
+                options: ["٢,٣٧٧", "٢٨٠", "٧٠٣"],
+                answer: 2,
+                explanation: "٤٧ + ٢٣٣ = ٢٨٠"
+            },
+            {
+                question: "٣٤٤ ÷ ٨ چەندە؟",
+                options: ["٤٣", "٤٠.٥", "٤٠"],
+                answer: 0,
+                explanation: "٣٤٤ ÷ ٨ = ٤٣"
+            },
+            {
+                question: "٢٧ × ٦ چەندە؟",
+                options: ["١٢٢", "٢٦٢", "١٦٢"],
+                answer: 2,
+                explanation: "٢٧ × ٦ = ١٦٢"
+            },
+            {
+                question: "لە BIDMAS/BODMAS دا، B مانای چییە؟",
+                options: ["Brackets (کەوانەکان)", "Base (بنکە)", "Both (هەردووکیان)"],
+                answer: 0,
+                explanation: "لە BIDMAS/BODMAS دا، B مانای Brackets (کەوانەکان) دەگەیەنێت."
+            },
+            {
+                question: "٣ + ٢ × ٤ چەندە؟",
+                options: ["٢٤", "٢٠", "١١"],
+                answer: 2,
+                explanation: "بە گوێرەی BIDMAS، یەکەم جار لێکدان ئەنجام دەدرێت: ٢ × ٤ = ٨، پاشان کۆکردنەوە: ٣ + ٨ = ١١"
+            },
+            {
+                question: "٤ + (-٢) چەندە؟",
+                options: ["٢", "٦", "-٢"],
+                answer: 0,
+                explanation: "کاتێک ژمارەیەکی ئەرێنی و نەرێی کۆ دەکەینەوە، ژمارە گەورەکە لە بچووکەکە دەردەکەین: ٤ - ٢ = ٢"
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submitBtn');
+        const resultContainer = document.getElementById('result');
+
+        function buildQuiz() {
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `
+                    <p><strong>${index + 1}. ${q.question}</strong></p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <button class="option" data-question="${index}" data-option="${i}">${option}</button>
+                        `).join('')}
+                    </div>
+                    <p class="feedback"></p>
+                    <div class="explanation">${q.explanation}</div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        buildQuiz();
+
+        const optionButtons = document.querySelectorAll('.option');
+        optionButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const questionIndex = this.getAttribute('data-question');
+                const questionDiv = this.closest('.question');
+                const options = questionDiv.querySelectorAll('.option');
+                
+                options.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        submitButton.addEventListener('click', function() {
+            let score = 0;
+            questions.forEach((q, index) => {
+                const questionDiv = document.querySelectorAll('.question')[index];
+                const selectedOption = questionDiv.querySelector('.option.selected');
+                const feedback = questionDiv.querySelector('.feedback');
+                const explanation = questionDiv.querySelector('.explanation');
+                
+                if (selectedOption) {
+                    const selectedAnswer = parseInt(selectedOption.getAttribute('data-option'));
+                    if (selectedAnswer === q.answer) {
+                        score++;
+                        feedback.textContent = 'ڕاستە!';
+                        feedback.className = 'feedback correct';
+                    } else {
+                        feedback.textContent = 'هەڵەیە';
+                        feedback.className = 'feedback incorrect';
+                    }
+                    explanation.style.display = 'block';
+                } else {
+                    feedback.textContent = 'تکایە وەڵامێک هەڵبژێرە';
+                    feedback.className = 'feedback';
+                }
+            });
+
+            resultContainer.textContent = `ئەنجامی تۆ: ${score} لە ${questions.length}`;
+        });
+    </script>
+</body>
+</html>
