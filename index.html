@@ -3,47 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ڕێساکانی بیرکاری</title>
+    <title>جیهانی بیرکاری - فێربوونی خۆش و ئاسان</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; direction: rtl; }
-        h1, h2 { color: #333; }
-        .container { max-width: 800px; margin: 0 auto; }
-        nav ul { list-style-type: none; padding: 0; }
-        nav ul li { margin-bottom: 10px; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans Arabic', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            direction: rtl;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #00a1ff, #00ff8f);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        .main-content, .sidebar {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .main-content {
+            width: 65%;
+        }
+        .sidebar {
+            width: 30%;
+        }
+        h2 {
+            color: #00a1ff;
+            border-bottom: 2px solid #00ff8f;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        ul, ol {
+            padding-right: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        a {
+            color: #00a1ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #00ff8f;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00a1ff, #00ff8f);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .feature-icon {
+            font-size: 2em;
+            margin-left: 15px;
+            color: #00a1ff;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>بەخێربێن بۆ ڕێساکانی بیرکاری</h1>
-        
-        <h2>لەم ڕێبەرەدا</h2>
-        <ol>
-            <li>پێداچوونەوە</li>
-            <li>تاقیکردنەوە</li>
-        </ol>
+    <header>
+        <div class="container">
+            <h1>جیهانی بیرکاری</h1>
+            <p class="subtitle">فێربوونی خۆش و ئاسان بۆ هەموو تەمەنێک</p>
+            <a href="#start" class="cta-button">دەست پێ بکە</a>
+        </div>
+    </header>
 
-        <h2>پەڕەکان</h2>
-        <nav>
+    <div class="container content">
+        <main class="main-content">
+            <h2>بەخێربێن بۆ جیهانی بیرکاری</h2>
+            <p>لێرەدا، ئێمە بیرکاری دەکەینە گەشتێکی خۆش و سەرنجڕاکێش! ئامادەی ئەوەی کە چێژ لە فێربوون وەربگریت و تواناکانت پەرە پێ بدەیت؟</p>
+            
+            <h3>تایبەتمەندییەکانی ئێمە:</h3>
+            <div class="feature">
+                <span class="feature-icon">🎨</span>
+                <div>
+                    <strong>دیزاینی ڕاکێشەر</strong>
+                    <p>وانەکانمان بە شێوەیەکی جوان و سەرنجڕاکێش نەخشێنراون.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🧠</span>
+                <div>
+                    <strong>فێربوونی کارلێکەرانە</strong>
+                    <p>ڕاهێنان و چالاکی بۆ باشترکردنی تێگەیشتنت.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🏆</span>
+                <div>
+                    <strong>خەڵاتکردن</strong>
+                    <p>وەرگرتنی خاڵ و میدالیا بۆ هاندانت.</p>
+                </div>
+            </div>
+
+            <h3 id="start">با دەست پێ بکەین!</h3>
             <ol>
-                <li><a href="wholenumb.html">نووسینی ژمارە تەواوەکان بە وشە</a></li>
-                <li><a href="orderofop.html">ڕێکخستنی ژمارە تەواوەکان</a></li>
-                <li><a href="addandsub.html">کۆکردنەوە و لێدەرکردنی ژمارە تەواوەکان</a></li>
-                <li><a href="multdiv.html">لێکدان و دابەشکردنی ژمارە تەواوەکان</a></li>
-                <li><a href="orderofop.html">ڕیزبەندی ئەنجامدانی کردارەکان</a></li>
-                <li><a href="usecal.html">بەکارهێنانی ژمێرەر</a></li>
-                <li><a href="negative.html">ژمارە نەرێنییەکان</a></li>
-                <li><a href="addsubneg.html">کۆکردنەوە و لێدەرکردنی ژمارە نەرێنییەکان</a></li>
-                <li><a href="multdivneg.html">لێکدان و دابەشکردنی ژمارە نەرێنییەکان</a></li>
+                <li><a href="wholenumb.html">ژمارە تەواوەکان - بنەمای سەرەکی</a></li>
+                <li><a href="addandsub.html">کۆکردنەوە و لێدەرکردن - هەنگاوی یەکەم</a></li>
+                <li><a href="multdiv.html">لێکدان و دابەشکردن - بەرەو پێشەوە</a></li>
+                <li><a href="orderofop.html">ڕیزبەندی ئەنجامدانی کردارەکان - وەک پسپۆڕێک بیربکەرەوە</a></li>
+                <li><a href="negative.html">ژمارە نەرێنییەکان - دنیایەکی نوێ</a></li>
+                <li><a href="usecal.html">بەکارهێنانی ژمێرەر - ئامرازی سەردەم</a></li>
             </ol>
-        </nav>
-
-        <main>
-            <p>بەخێربێن بۆ ماڵپەڕی ڕێساکانی بیرکاری. لێرەدا، ئێوە دەتوانن فێری بنەما سەرەتاییەکانی بیرکاری ببن بە شێوەیەکی ئاسان و ڕوون. بەشەکانی سەرەوە بەکاربهێنن بۆ گەڕان بە نێو بابەتە جیاوازەکاندا.</p>
-            <p>هەر بەشێک ڕوونکردنەوەی وردی تێدایە لەگەڵ نموونە و ڕاهێنان بۆ یارمەتیدانتان لە تێگەیشتن و پراکتیزەکردنی چەمکەکان. لەگەڵ ئەوەی کە بەرەو پێش دەچن، دەتوانن زانیارییەکانتان تاقی بکەنەوە بە ئەنجامدانی ڕاهێنانەکان لە کۆتایی هەر بەشێکدا.</p>
-            <p>ئامانجی ئێمە ئەوەیە کە بیرکاری بۆ ئێوە ئاسان و خۆش بکەین. بە دڵنیاییەوە، کاتێکی خۆش و سوودبەخشتان هەبێت لە فێربووندا!</p>
         </main>
+
+        <aside class="sidebar">
+            <h2>پێداچوونەوە خێرا</h2>
+            <ul>
+                <li><a href="test.html">تاقیکردنەوەی خۆت</a></li>
+                <li><a href="games.html">یارییە بیرکارییەکان</a></li>
+                <li><a href="calculator.html">ژمێرەری ئۆنلاین</a></li>
+            </ul>
+
+            <h3>ئامۆژگاری ڕۆژانە</h3>
+            <p>"بیرکاری تەنها ژمارە نییە، بەڵکو شێوازی بیرکردنەوەیە!"</p>
+
+            <h3>پرسیاری باو</h3>
+            <p><strong>پ: بۆچی بیرکاری گرنگە؟</strong></p>
+            <p>و: بیرکاری یارمەتیمان دەدات لە چارەسەرکردنی کێشەکان و گەشەپێدانی بیرکردنەوەی ڕەخنەگرانە.</p>
+        </aside>
     </div>
 </body>
 </html>
