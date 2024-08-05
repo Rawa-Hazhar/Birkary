@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کۆکردنەوە و لێدەرکردنی ژمارە تەواوەکان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Naskh Arabic', 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-100 via-blue-100 to-purple-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-2xl">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center text-indigo-800">کۆکردنەوە و لێدەرکردنی ژمارە تەواوەکان</h1>
+        
+        <section id="intro" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-700">دەستپێک</h2>
+            <p class="mb-4 text-gray-700 leading-relaxed">کۆکردنەوە و لێدەرکردنی ژمارە تەواوەکان دوو کردارن کە لە بنەڕەتیترین و گرنگترین بەشەکانی بیرکارین. ئەم دوو کردارە ڕۆڵێکی سەرەکی دەگێڕن لە ژیانی ڕۆژانەماندا و بناغەی زۆربەی چەمکە بیرکارییەکانی تر پێکدەهێنن.</p>
+            <p class="mb-4 text-gray-700 leading-relaxed">لەم وانەیەدا، فێر دەبین چۆن ڕێگای ستوونی بەکار بهێنین بۆ کۆکردنەوە و لێدەرکردنی ژمارە تەواوەکان. ئەم ڕێگایە یارمەتیمان دەدات کە ژمارە گەورەکان بە وردی و ئاسانی کۆ بکەینەوە یان لێک دەربکەین.</p>
+        </section>
+
+        <section id="columnAddition" class="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-blue-800">کۆکردنەوەی ستوونی</h2>
+            <p class="mb-4 text-gray-700 leading-relaxed">کۆکردنەوەی ستوونی ڕێگایەکی کاریگەرە بۆ کۆکردنەوەی دوو ژمارە یان زیاتر. لەم ڕێگایەدا، ژمارەکان بە ستوونی دەنووسرێن، بە جۆرێک کە خانەکانی بەهای شوێن بەیەک بگەن.</p>
+            
+            <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+                <h3 class="text-xl font-semibold mb-2 text-indigo-600">نموونە: ٣٤٣ + ٣١٥</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border p-2">یەکەکان</th>
+                                <th class="border p-2">دەیەکان</th>
+                                <th class="border p-2">سەدەکان</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">٣</td>
+                                <td class="border p-2">٤</td>
+                                <td class="border p-2">٣</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">٥</td>
+                                <td class="border p-2">١</td>
+                                <td class="border p-2">٣</td>
+                            </tr>
+                            <tr class="bg-green-100">
+                                <td class="border p-2">٨</td>
+                                <td class="border p-2">٥</td>
+                                <td class="border p-2">٦</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 space-y-2">
+                    <p><span class="font-bold">هەنگاو ١:</span> لە ستوونی یەکەکانەوە دەست پێ دەکەین: ٣ + ٥ = ٨</p>
+                    <p><span class="font-bold">هەنگاو ٢:</span> لە ستوونی دەیەکان: ٤ + ١ = ٥</p>
+                    <p><span class="font-bold">هەنگاو ٣:</span> لە ستوونی سەدەکان: ٣ + ٣ = ٦</p>
+                </div>
+                <p class="mt-4 font-bold text-center text-lg">ئەنجام: ٣٤٣ + ٣١٥ = ٦٥٨</p>
+            </div>
+
+            <div class="bg-yellow-100 p-4 rounded-lg mb-6">
+                <h3 class="text-lg font-semibold mb-2 text-yellow-800">خاڵی گرنگ</h3>
+                <p class="text-gray-700">ئەگەر کۆی دوو ژمارە لە ستوونێکدا گەورەتر بوو لە ٩، دەبێت ژمارەیەک بۆ ستوونی دواتر ببەین.</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+                <h3 class="text-xl font-semibold mb-2 text-indigo-600">نموونە: ٣٤٣ + ٣٢٩</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border p-2">یەکەکان</th>
+                                <th class="border p-2">دەیەکان</th>
+                                <th class="border p-2">سەدەکان</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">٣</td>
+                                <td class="border p-2">٤</td>
+                                <td class="border p-2">٣</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">٩</td>
+                                <td class="border p-2">٢</td>
+                                <td class="border p-2">٣</td>
+                            </tr>
+                            <tr class="bg-green-100">
+                                <td class="border p-2">٢</td>
+                                <td class="border p-2">٧</td>
+                                <td class="border p-2">٦</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 space-y-2">
+                    <p><span class="font-bold">هەنگاو ١:</span> لە ستوونی یەکەکان: ٣ + ٩ = ١٢، ٢ لە خانەی یەکەکان دادەنێین و ١ دەبەین بۆ ستوونی دەیەکان</p>
+                    <p><span class="font-bold">هەنگاو ٢:</span> لە ستوونی دەیەکان: ٤ + ٢ + ١ (لە بردن) = ٧</p>
+                    <p><span class="font-bold">هەنگاو ٣:</span> لە ستوونی سەدەکان: ٣ + ٣ = ٦</p>
+                </div>
+                <p class="mt-4 font-bold text-center text-lg">ئەنجام: ٣٤٣ + ٣٢٩ = ٦٧٢</p>
+            </div>
+
+            <div class="bg-green-100 p-4 rounded-lg">
+                <h3 class="text-lg font-semibold mb-2 text-green-800">ڕاهێنان</h3>
+                <p class="text-gray-700 mb-4">بە بەکارهێنانی ڕێگای کۆکردنەوەی ستوونی، ئەنجامی ٤٢٧ + ٣٦٣ بدۆزەرەوە.</p>
+                <div class="overflow-x-auto mb-4">
+                    <table id="practiceTable" class="w-full text-center border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border p-2">یەکەکان</th>
+                                <th class="border p-2">دەیەکان</th>
+                                <th class="border p-2">سەدەکان</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">٧</td>
+                                <td class="border p-2">٢</td>
+                                <td class="border p-2">٤</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">٣</td>
+                                <td class="border p-2">٦</td>
+                                <td class="border p-2">٣</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2"><input type="number" class="w-full text-center" min="0" max="9"></td>
+                                <td class="border p-2"><input type="number" class="w-full text-center" min="0" max="9"></td>
+                                <td class="border p-2"><input type="number" class="w-full text-center" min="0" max="9"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="flex justify-center">
+                    <button id="checkAnswerBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">پشکنینی وەڵام</button>
+                </div>
+                <p id="answerFeedback" class="mt-4 text-center font-bold hidden"></p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('checkAnswerBtn').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#practiceTable input');
+            const userAnswer = Array.from(inputs).map(input => parseInt(input.value));
+            const correctAnswer = [0, 9, 7];
+
+            if (JSON.stringify(userAnswer) === JSON.stringify(correctAnswer)) {
+                document.getElementById('answerFeedback').textContent = 'ئافەرین! وەڵامەکەت دروستە.';
+                document.getElementById('answerFeedback').className = 'mt-4 text-center font-bold text-green-600';
+            } else {
+                document.getElementById('answerFeedback').textContent = 'ببورە، وەڵامەکەت دروست نییە. تکایە دووبارە هەوڵ بدەوە.';
+                document.getElementById('answerFeedback').className = 'mt-4 text-center font-bold text-red-600';
+            }
+            document.getElementById('answerFeedback').classList.remove('hidden');
+        });
+    </script>
+<section id="columnSubtraction" class="mb-8 bg-gradient-to-r from-pink-50 to-red-50 p-6 rounded-xl">
+    <h2 class="text-2xl font-bold mb-4 text-red-800">لێدەرکردنی ستوونی</h2>
+    <p class="mb-4 text-gray-700 leading-relaxed">لێدەرکردنی ستوونی ڕێگایەکی کاریگەرە بۆ لێدەرکردنی ژمارە گەورەکان. لەم ڕێگایەدا، ژمارەکان بە ستوونی دەنووسرێن و لە چەپەوە بۆ ڕاست لێک دەردەکرێن.</p>
+    
+    <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2 text-red-600">نموونە: ٥٤٨ - ١٢٥</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-center border-collapse">
+                <thead>
+                    <tr>
+                        <th class="border p-2">یەکەکان</th>
+                        <th class="border p-2">دەیەکان</th>
+                        <th class="border p-2">سەدەکان</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border p-2">٨</td>
+                        <td class="border p-2">٤</td>
+                        <td class="border p-2">٥</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-2">٥</td>
+                        <td class="border p-2">٢</td>
+                        <td class="border p-2">١</td>
+                    </tr>
+                    <tr class="bg-red-100">
+                        <td class="border p-2">٣</td>
+                        <td class="border p-2">٢</td>
+                        <td class="border p-2">٤</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4 space-y-2">
+            <p><span class="font-bold">هەنگاو ١:</span> لە ستوونی یەکەکانەوە دەست پێ دەکەین: ٨ - ٥ = ٣</p>
+            <p><span class="font-bold">هەنگاو ٢:</span> لە ستوونی دەیەکان: ٤ - ٢ = ٢</p>
+            <p><span class="font-bold">هەنگاو ٣:</span> لە ستوونی سەدەکان: ٥ - ١ = ٤</p>
+        </div>
+        <p class="mt-4 font-bold text-center text-lg">ئەنجام: ٥٤٨ - ١٢٥ = ٤٢٣</p>
+    </div>
+
+    <div class="bg-yellow-100 p-4 rounded-lg mb-6">
+        <h3 class="text-lg font-semibold mb-2 text-yellow-800">خاڵی گرنگ</h3>
+        <p class="text-gray-700">کاتێک دوو ژمارە لە ستوونێکدا لێک دەردەکەین، ئەگەر ژمارەی دووەم گەورەتر بوو لە یەکەم، ناتوانین لێی دەربکەین. لەم کاتەدا پێویستە ژمارەیەک لە ستوونی دواتر قەرز بکەین.</p>
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2 text-red-600">نموونە: ٣٤٣ - ٢٣٧</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-center border-collapse">
+                <thead>
+                    <tr>
+                        <th class="border p-2">یەکەکان</th>
+                        <th class="border p-2">دەیەکان</th>
+                        <th class="border p-2">سەدەکان</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border p-2"><span class="line-through">٣</span> ١٣</td>
+                        <td class="border p-2"><span class="line-through">٤</span> ٣</td>
+                        <td class="border p-2">٣</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-2">٧</td>
+                        <td class="border p-2">٣</td>
+                        <td class="border p-2">٢</td>
+                    </tr>
+                    <tr class="bg-red-100">
+                        <td class="border p-2">٦</td>
+                        <td class="border p-2">٠</td>
+                        <td class="border p-2">١</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4 space-y-2">
+            <p><span class="font-bold">هەنگاو ١:</span> لە ستوونی یەکەکان، ناتوانین ٧ لە ٣ دەربکەین. بۆیە ١٠ لە ستوونی دەیەکان قەرز دەکەین: ١٣ - ٧ = ٦</p>
+            <p><span class="font-bold">هەنگاو ٢:</span> لە ستوونی دەیەکان، ٣ (٤ - ١ لە قەرزکردن) - ٣ = ٠</p>
+            <p><span class="font-bold">هەنگاو ٣:</span> لە ستوونی سەدەکان: ٣ - ٢ = ١</p>
+        </div>
+        <p class="mt-4 font-bold text-center text-lg">ئەنجام: ٣٤٣ - ٢٣٧ = ١٠٦</p>
+    </div>
+
+    <div class="bg-green-100 p-4 rounded-lg">
+        <h3 class="text-lg font-semibold mb-2 text-green-800">ڕاهێنان</h3>
+        <p class="text-gray-700 mb-4">بە بەکارهێنانی ڕێگای لێدەرکردنی ستوونی، ئەنجامی ٤٢٧ - ٣٦٣ بدۆزەرەوە.</p>
+        <div class="overflow-x-auto mb-4">
+            <table id="practiceTableSubtraction" class="w-full text-center border-collapse">
+                <thead>
+                    <tr>
+                        <th class="border p-2">یەکەکان</th>
+                        <th class="border p-2">دەیەکان</th>
+                        <th class="border p-2">سەدەکان</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border p-2">٧</td>
+                        <td class="border p-2">٢</td>
+                        <td class="border p-2">٤</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-2">٣</td>
+                        <td class="border p-2">٦</td>
+                        <td class="border p-2">٣</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-2"><input type="number" class="w-full text-center" min="0" max="9"></td>
+                        <td class="border p-2"><input type="number" class="w-full text-center" min="0" max="9"></td>
+                        <td class="border p-2"><input type="number" class="w-full text-center" min="0" max="9"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="flex justify-center">
+            <button id="checkAnswerBtnSubtraction" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">پشکنینی وەڵام</button>
+        </div>
+        <p id="answerFeedbackSubtraction" class="mt-4 text-center font-bold hidden"></p>
+    </div>
+</section>
+
+<script>
+    document.getElementById('checkAnswerBtnSubtraction').addEventListener('click', function() {
+        const inputs = document.querySelectorAll('#practiceTableSubtraction input');
+        const userAnswer = Array.from(inputs).map(input => parseInt(input.value));
+        const correctAnswer = [4, 6, 0];
+
+        if (JSON.stringify(userAnswer) === JSON.stringify(correctAnswer)) {
+            document.getElementById('answerFeedbackSubtraction').textContent = 'ئافەرین! وەڵامەکەت دروستە.';
+            document.getElementById('answerFeedbackSubtraction').className = 'mt-4 text-center font-bold text-green-600';
+        } else {
+            document.getElementById('answerFeedbackSubtraction').textContent = 'ببورە، وەڵامەکەت دروست نییە. تکایە دووبارە هەوڵ بدەوە.';
+            document.getElementById('answerFeedbackSubtraction').className = 'mt-4 text-center font-bold text-red-600';
+        }
+        document.getElementById('answerFeedbackSubtraction').classList.remove('hidden');
+    });
+</script>
+</body>
+</html>
