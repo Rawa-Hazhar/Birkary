@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لێکدان و دابەشکردنی ژمارە نەرێیەکان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 text-gray-800">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-3xl shadow-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center text-purple-800 fade-in">لێکدان و دابەشکردنی ژمارە نەرێیەکان</h1>
+        
+        <section class="mb-12 bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-700">ڕێساکان</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg hover-scale">
+                <p class="mb-4">بۆ لێکدان و دابەشکردنی ژمارەکان، ئەم ڕێسایانە پەیڕەو دەکەین:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li class="text-red-600 font-semibold">دوو نیشانەی <span class="text-blue-600">جیاواز</span> دەبنە نیشانەی <span class="text-red-600">نەرێی</span></li>
+                    <li class="text-green-600 font-semibold">دوو نیشانەی <span class="text-blue-600">هاوشێوە</span> دەبنە نیشانەی <span class="text-green-600">ئەرێنی</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-12 bg-gradient-to-r from-pink-100 to-orange-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-pink-700">نموونەکان</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold mb-2 text-pink-600">نیشانە هاوشێوەکان</h3>
+                    <p>(-٤) × (-٥) = <span class="text-green-600 font-bold">٢٠</span></p>
+                    <p class="text-sm mt-2">دوو نیشانەی نەرێی دەبنە ئەرێنی</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold mb-2 text-pink-600">نیشانە هاوشێوەکان</h3>
+                    <p>٢٠ ÷ ٥ = <span class="text-green-600 font-bold">٤</span></p>
+                    <p class="text-sm mt-2">دوو نیشانەی ئەرێنی دەمێننەوە ئەرێنی</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold mb-2 text-pink-600">نیشانە جیاوازەکان</h3>
+                    <p>(-١٤) ÷ ٢ = <span class="text-red-600 font-bold">-٧</span></p>
+                    <p class="text-sm mt-2">نیشانەی نەرێی و ئەرێنی دەبنە نەرێی</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold mb-2 text-pink-600">نیشانە جیاوازەکان</h3>
+                    <p>١٤ ÷ (-٢) = <span class="text-red-600 font-bold">-٧</span></p>
+                    <p class="text-sm mt-2">نیشانەی ئەرێنی و نەرێی دەبنە نەرێی</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 bg-gradient-to-r from-green-100 to-teal-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">ڕاهێنان</h2>
+            <div id="practiceQuestions" class="space-y-4">
+                <!-- ڕاهێنانەکان لێرە زیاد دەکرێن -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const questions = [
+            { 
+                question: "-٤ × ٣ چەندە؟", 
+                answer: "-١٢", 
+                options: ["-١٢", "١٢", "-٧", "٧"],
+                explanation: "کاتێک ژمارەیەکی نەرێی لە ژمارەیەکی ئەرێنی دەدەین، ئەنجامەکە دەبێتە نەرێی. لێرەدا -٤ × ٣ = -(٤ × ٣) = -١٢."
+            },
+            { 
+                question: "١٢ ÷ (-٤) چەندە؟", 
+                answer: "-٣", 
+                options: ["-٣", "٣", "-٨", "٨"],
+                explanation: "کاتێک ژمارەیەکی ئەرێنی بەسەر ژمارەیەکی نەرێیدا دابەش دەکەین، ئەنجامەکە دەبێتە نەرێی. لێرەدا ١٢ ÷ (-٤) = -(١٢ ÷ ٤) = -٣."
+            },
+            { 
+                question: "(-٥) × (-٦) چەندە؟", 
+                answer: "٣٠", 
+                options: ["٣٠", "-٣٠", "١١", "-١١"],
+                explanation: "کاتێک دوو ژمارەی نەرێی لێک دەدەین، ئەنجامەکە دەبێتە ئەرێنی. لێرەدا (-٥) × (-٦) = ٥ × ٦ = ٣٠."
+            },
+            { 
+                question: "-١٨ ÷ (-٣) چەندە؟", 
+                answer: "٦", 
+                options: ["٦", "-٦", "٢١", "-٢١"],
+                explanation: "کاتێک دوو ژمارەی نەرێی بەسەر یەکدا دابەش دەکەین، ئەنجامەکە دەبێتە ئەرێنی. لێرەدا -١٨ ÷ (-٣) = ١٨ ÷ ٣ = ٦."
+            }
+        ];
+
+        const practiceSection = document.getElementById('practiceQuestions');
+
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'bg-white p-4 rounded-lg shadow-lg hover-scale';
+            questionDiv.innerHTML = `
+                <p class="font-bold mb-2">${index + 1}. ${q.question}</p>
+                <div class="grid grid-cols-2 gap-2">
+                    ${q.options.map(option => `
+                        <button class="answer-option bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">${option}</button>
+                    `).join('')}
+                </div>
+                <p class="feedback mt-2 hidden"></p>
+                <p class="explanation mt-2 hidden text-sm text-gray-600"></p>
+            `;
+            practiceSection.appendChild(questionDiv);
+
+            const buttons = questionDiv.querySelectorAll('.answer-option');
+            const feedback = questionDiv.querySelector('.feedback');
+            const explanation = questionDiv.querySelector('.explanation');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (button.textContent === q.answer) {
+                        feedback.textContent = 'ئافەرین! وەڵامەکەت دروستە.';
+                        feedback.className = 'feedback mt-2 text-green-600 font-bold';
+                    } else {
+                        feedback.textContent = `ببورە، وەڵامەکەت دروست نییە. وەڵامی ڕاست ${q.answer} بوو.`;
+                        feedback.className = 'feedback mt-2 text-red-600 font-bold';
+                    }
+                    explanation.textContent = q.explanation;
+                    feedback.classList.remove('hidden');
+                    explanation.classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
