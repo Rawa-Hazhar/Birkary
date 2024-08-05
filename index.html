@@ -5,229 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ژێدەر - سەرچاوەی فێربوونی کراوە (قۆناغی تاقیکردنەوە)</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
-        
-        :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #50c878;
-            --text-color: #333;
-            --bg-color: #f9f9f9;
-            --warning-color: #ff6b6b;
-        }
-        
         body {
-            font-family: 'Noto Sans Arabic', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            padding: 20px;
             direction: rtl;
+            background-color: #f0f8ff;
         }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-            padding: 60px 0;
-            border-radius: 0 0 50% 50% / 20px;
-        }
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .subtitle {
-            font-size: 1.4em;
-            margin-bottom: 30px;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #4a90e2;
         }
         .beta-warning {
-            background-color: var(--warning-color);
+            background-color: #ff6b6b;
             color: white;
             padding: 10px;
             text-align: center;
             font-weight: bold;
-        }
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-top: 40px;
-        }
-        .main-content, .sidebar {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 20px;
-        }
-        .main-content {
-            flex-basis: 65%;
-        }
-        .sidebar {
-            flex-basis: 30%;
-        }
-        h2, h3 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-top: 0;
+            border-radius: 5px;
         }
         ul {
             padding-right: 20px;
         }
         li {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         a {
-            color: var(--primary-color);
+            color: #4a90e2;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
         a:hover {
-            color: var(--secondary-color);
-        }
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 20px;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .feature {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
-        .feature-icon {
-            font-size: 2.5em;
-            margin-left: 20px;
-            color: var(--primary-color);
-        }
-        .feature-content {
-            flex: 1;
-        }
-        .feature-title {
-            font-size: 1.2em;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-        .math-topics {
-            background-color: #f0f8ff;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        @media (max-width: 768px) {
-            .main-content, .sidebar {
-                flex-basis: 100%;
-            }
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="beta-warning">
-        ئاگاداری: ئەم ماڵپەڕە لە قۆناغی تاقیکردنەوە (بێتا) دایە. تەنها چەند بەشێکی کەم لە ئێستادا کارایە.
-    </div>
-    <header>
-        <div class="container">
-            <h1>ژێدەر</h1>
-            <p class="subtitle">سەرچاوەی فێربوونی کراوە بۆ بیرکاری و زانستە سروشتییەکان</p>
-            <a href="#join" class="cta-button">بەشداربە لە گەشتی زانست</a>
+    <div class="container">
+        <div class="beta-warning">
+            ئاگاداری: ئەم ماڵپەڕە لە قۆناغی تاقیکردنەوە (بێتا) دایە. تەنها چەند بەشێکی کەم لە ئێستادا کارایە.
         </div>
-    </header>
 
-    <div class="container content">
-        <main class="main-content">
-            <h2>بەخێربێن بۆ جیهانی زانست و فێربوون</h2>
-            <p>ژێدەر سەرچاوەیەکی کراوەیە بۆ فێربوونی بیرکاری و زانستە سروشتییەکان، لە قۆناغە سەرەتاییەکانی خوێندنەوە تا ئاستە باڵاکانی زانکۆ. ئێمە باوەڕمان وایە کە هەر فێرخوازێکی کورد دەتوانێت ببێتە مامۆستای خۆی لە هەموو بوارەکاندا.</p>
-            
-            <div class="feature">
-                <span class="feature-icon">🚀</span>
-                <div class="feature-content">
-                    <h3 class="feature-title">لە قۆناغی دەستپێکداین</h3>
-                    <p>ژێدەر لە ئێستادا لە قۆناغی سەرەتایی گەشەکردندایە. ئێمە بە بەردەوامی کار لەسەر زیادکردن و باشترکردنی ناوەڕۆکەکان دەکەین.</p>
-                </div>
-            </div>
-            
-            <div class="feature">
-                <span class="feature-icon">🌍</span>
-                <div class="feature-content">
-                    <h3 class="feature-title">بە زمانی کوردی</h3>
-                    <p>ئامانجمان دروستکردنی گەورەترین سەرچاوەی فێربوونی پەروەردەیی بێ بەرامبەرە بە زمانی کوردی.</p>
-                </div>
-            </div>
-            
-            <div class="feature">
-                <span class="feature-icon">🤝</span>
-                <div class="feature-content">
-                    <h3 class="feature-title">بەشداری کۆمەڵگا</h3>
-                    <p>ئێمە پێکەوە دەتوانین ئەم سەرچاوەیە دەوڵەمەندتر و باشتر بکەین. هەر کەسێک دەتوانێت بەشدار بێت لە گەشەپێدانی ژێدەر.</p>
-                </div>
-            </div>
+        <h1>بەخێربێن بۆ ژێدەر</h1>
+        <p>ژێدەر سەرچاوەیەکی کراوەیە بۆ فێربوونی بیرکاری و زانستە سروشتییەکان، لە قۆناغە سەرەتاییەکانی خوێندنەوە تا ئاستە باڵاکانی زانکۆ. ئێمە لە قۆناغی سەرەتایی گەشەپێداندا هەین و بە بەردەوامی کار لەسەر زیادکردن و باشترکردنی ناوەڕۆکەکان دەکەین.</p>
 
-            <h3>دەربارەی ژێدەر</h3>
-            <p>ژێدەر بیرۆکە و دامەزراندنی ڕەوا هەژارە. ئامانجی ئێمە دروستکردنی پلاتفۆرمێکی فێرکاریی تەواوە کە هەموو فێرخوازێکی کورد بتوانێت سوودی لێ ببینێت، بەڵام ئێمە هێشتا لە سەرەتای ڕێگاداین.</p>
+        <h2>بابەتەکانی بەردەست</h2>
+        <ul>
+            <li><a href="numbers1.html">ژمارەکان</a></li>
+            <li><a href="wholenumb.html">ژمارە تەواوەکان</a></li>
+            <li><a href="negative.html">ژمارە نەرێنییەکان</a></li>
+            <li><a href="addandsub.html">کۆکردنەوە و لێدەرکردن</a></li>
+            <li><a href="addsubneg.html">کۆکردنەوە و لێدەرکردنی ژمارە نەرێنییەکان</a></li>
+            <li><a href="multdiv.html">لێکدان و دابەشکردن</a></li>
+            <li><a href="multdivneg.html">لێکدان و دابەشکردنی ژمارە نەرێنییەکان</a></li>
+            <li><a href="orderofop.html">ڕیزبەندی ئەنجامدانی کردارەکان</a></li>
+            <li><a href="usecal.html">بەکارهێنانی ژمێرەر</a></li>
+            <li><a href="test.html">تاقیکردنەوە</a></li>
+        </ul>
 
-            <div class="math-topics">
-                <h3>بەشی بیرکاری</h3>
-                <p>لە ئێستادا، بەشی بیرکاری تەنها چەند بابەتێکی سنوورداری تێدایە:</p>
-                <ul>
-                    <li><a href="numbers.html">ژمارەکان</a>
-                        <ul>
-                            <li><a href="wholenumb.html">ژمارە تەواوەکان</a></li>
-                            <li><a href="negative.html">ژمارە نەرێنییەکان</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="addandsub.html">کۆکردنەوە و لێدەرکردن</a></li>
-                    <li><a href="multdiv.html">لێکدان و دابەشکردن</a></li>
-                    <li><a href="orderofop.html">ڕیزبەندی ئەنجامدانی کردارەکان</a></li>
-                </ul>
-            </div>
+        <h2>دەربارەی ژێدەر</h2>
+        <p>ژێدەر بیرۆکە و دامەزراندنی ڕەوا هەژارە. ئامانجی ئێمە دروستکردنی گەورەترین سەرچاوەی فێربوونی پەروەردەیی بێ بەرامبەرە بە زمانی کوردی. ئێمە پێکەوە دەتوانین ئەم سەرچاوەیە دەوڵەمەندتر و باشتر بکەین.</p>
 
-            <h3 id="join">چۆن دەتوانیت بەشدار بیت؟</h3>
-            <p>ئەگەر تۆش دەتەوێت وەکو مامۆستا یان نووسەر لەم هەوڵە گرنگەدا بەشدار بیت، پەیوەندیمان پێوە بکە. بە یارمەتی تۆ، دەتوانین ژێدەر بکەینە سەرچاوەیەکی دەوڵەمەند بۆ فێربوونی کوردی.</p>
-            <a href="contact.html" class="cta-button">پەیوەندیمان پێوە بکە</a>
-        </main>
-
-        <aside class="sidebar">
-            <h2>بابەتەکانی ژێدەر</h2>
-            <ul>
-                <li><a href="math.html">بیرکاری</a></li>
-                <li><a href="physics.html">فیزیا</a> (بە زوویی)</li>
-                <li><a href="chemistry.html">کیمیا</a> (بە زوویی)</li>
-                <li><a href="biology.html">زیندەوەرزانی</a> (بە زوویی)</li>
-                <li><a href="computer-science.html">زانستی کۆمپیوتەر</a> (بە زوویی)</li>
-            </ul>
-
-            <h3>دوایین نوێکارییەکان</h3>
-            <ul>
-                <li><a href="numbers.html">زیادکردنی بەشی ژمارەکان</a></li>
-                <li><a href="addandsub.html">نوێکردنەوەی وانەی کۆکردنەوە و لێدەرکردن</a></li>
-            </ul>
-
-            <h3>وتەی ڕۆژ</h3>
-            <p>"فێربوون پرۆسەیەکی بەردەوامە، بە هەنگاوی بچووک دەست پێدەکات." - ژێدەر</p>
-
-            <h3>بەشداربە لە گەشەپێدانی ژێدەر</h3>
-            <p>ئێمە بە بەردەوامی بە دوای مامۆستا، نووسەر و داهێنەرانی نوێدا دەگەڕێین بۆ یارمەتیدانمان لە فراوانکردن و باشترکردنی ژێدەر. ئەگەر حەزت لە بەشداریکردن هەیە، پەیوەندیمان پێوە بکە!</p>
-        </aside>
+        <h2>بەشداربە</h2>
+        <p>ئەگەر دەتەوێت وەکو مامۆستا یان نووسەر لەم هەوڵە گرنگەدا بەشدار بیت، تکایە پەیوەندیمان پێوە بکە. یارمەتی ئێوە گرنگە بۆ سەرکەوتنی ئەم پڕۆژەیە.</p>
     </div>
 </body>
 </html>
