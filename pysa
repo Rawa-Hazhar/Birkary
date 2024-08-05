@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ckb-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تیۆرمی فیساگۆرس بۆ منداڵان</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rudaw:wght@400;700&display=swap');
+        body {
+            font-family: 'Rudaw', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f8ff;
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        #controls {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #explanation {
+            max-width: 800px;
+            text-align: justify;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        input[type="range"] {
+            width: 200px;
+        }
+        #canvas-container {
+            margin-top: 20px;
+        }
+        .example {
+            background-color: #e6f3ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>تیۆرمی فیساگۆرس بۆ منداڵان</h1>
+    <div id="controls">
+        <label for="sideA">لای وەستاوی أ: </label>
+        <input type="range" id="sideA" min="1" max="20" value="10" step="0.1">
+        <span id="sideAValue">10 سم</span><br
+        <label for="sideB">لای وەستاوی ب: </label>
+        <input type="range" id="sideB" min="1" max="20" value="10" step="0.1">
+        <span id="sideBValue">10 سم</span>
+    </div>
+    <div id="canvas-container"></div>
+    <div id="explanation">
+        <h2>تیۆرەمی فیساگۆرس چییە؟</h2>
+        <p>تیۆرمی فیساگۆرس یەکێکە لە گرنگترین یاساکانی بیرکاری. ئەم تیۆرەمە پەیوەندی نێوان لاکانی سێگۆشەی گۆشە وەستاو پیشان دەدات. سێگۆشەی گۆشە وەستاو ئەو سێگۆشەیە کە یەک گۆشەی ٩٠ پلەیی هەیە.</p>
+        
+        <p>تیۆرمەکە دەڵێت:</p>
+        <p style="text-align: center;"><strong>لە سێگۆشەی گۆشە وەستاودا، ڕووبەری چوارگۆشەی سەر ژێ (ج) یەکسانە بە کۆی ڕووبەری چوارگۆشەکانی سەر دوو لاکەی تر (أ و ب).</strong></p>
+        
+        <p>بە زمانی بیرکاری دەتوانین بڵێین:</p>
+        <p style="text-align: center;"><strong>أ² + ب² = ج²</strong></p>
+        
+        <p>لێرەدا:</p>
+        <ul>
+            <li>أ و ب دوو لای کورتی سێگۆشەکەن (پێیان دەوترێت لا وەستاوەکان)</li>
+            <li>ج درێژترین لای سێگۆشەکەیە (پێی دەوترێت ژێ)</li>
+        </ul>
+        
+        <div class="example">
+            <h3>نموونەیەک:</h3>
+            <p>با سێگۆشەیەکمان هەبێت کە:</p>
+            <ul>
+                <li>لای أ = ٣ سم</li>
+                <li>لای ب = ٤ سم</li>
+            </ul>
+            <p>دەتوانین درێژی ژێ (ج) بدۆزینەوە:</p>
+            <p>ج² = أ² + ب²</p>
+            <p>ج² = ٣² + ٤²</p>
+            <p>ج² = ٩ + ١٦</p>
+            <p>ج² = ٢٥</p>
+            <p>ج = √٢٥ = ٥ سم</p>
+        </div>
+        
+        <p>لەم پیشاندانە کارەکییەدا، دەتوانیت بە بەکارهێنانی بزوێنەرەکان درێژی لاکانی أ و ب بگۆڕیت. وێنەکە لە کاتی ڕاستەقینەدا نوێ دەبێتەوە و پیشانی دەدات چۆن ڕووبەری چوارگۆشەکان دەگۆڕێت. هەوڵ بدە درێژی لاکان بگۆڕیت و سەیری ئەوە بکە چۆن ڕووبەری چوارگۆشەی شین (لەسەر ژێ) هەمیشە یەکسانە بە کۆی ڕووبەری چوارگۆشە سوور و سەوزەکە!</p>
+    </div>
+    <script>
+        let sideASlider, sideBSlider, sideAValue, sideBValue
+        let sideA, sideB, hypotenuse;
+
+        function setup() {
+            const canvas = createCanvas(600, 600);
+            canvas.parent('canvas-container');
+            sideASlider = select('#sideA');
+            sideBSlider = select('#sideB');
+            sideAValue = select('#sideAValue');
+            sideBValue = select('#sideBValue');
+            sideASlider.input(updateTriangle);
+            sideBSlider.input(updateTriangle);
+            updateTriangle();
+        }
+
+        function updateTriangle() {
+            sideA = sideASlider.value() * 10;
+            sideB = sideBSlider.value() * 10;
+            hypotenuse = sqrt(sideA * sideA + sideB * sideB);
+            sideAValue.html(sideASlider.value() + ' سم');
+            sideBValue.html(sideBSlider.value() + ' سم');
+        }
+
+        function draw() {
+            background(240);
+            translate(width / 2, height / 2);
+            scale(1, -1);  // Flip the y-axis to make the coordinate system more intuitive
+            
+            // Draw squares on each side
+            noStroke();
+            // Red square on side A
+            fill(255, 100, 100, 200);
+            rect(-sideA/2, sideB/2, sideA, sideA);
+            // Green square on side B
+            fill(100, 255, 100, 200);
+            rect(sideA/2, -sideB/2, sideB, sideB);
+            
+            // Blue square on hypotenuse
+            fill(100, 100, 255, 200);
+            push();
+            translate(-sideA/2, sideB/2);
+            rotate(-atan2(sideB, sideA) - PI/2);
+            rect(0, 0, hypotenuse, hypotenuse);
+            pop();
+            
+            // Draw the triangle
+            stroke(50);
+            strokeWeight(2);
+            line(-sideA/2, sideB/2, sideA/2, sideB/2);
+            line(sideA/2, sideB/2, sideA/2, -sideB/2);
+            line(-sideA/2, sideB/2, sideA/2, -sideB/2);
+            
+            // Display side lengths and areas
+            textAlign(CENTER, CENTER);
+            textFont('Rudaw');
+            textSize(16);
+            fill(0);
+            scale(1, -1);  // Flip the y-axis back for text
+            
+            // Text for side A
+            push();
+            translate(0, -sideB/2 - sideA/4);
+            text(`أ = ${(sideA/10).toFixed(1)} سم`, 0, 0);
+            text(`أ² = ${(sideA * sideA / 100).toFixed(2)} سم²`, 0, 20);
+            pop();
+            
+            // Text for side B
+            push();
+            translate(sideA/2 + sideB/4, 0);
+            rotate(-PI / 2);
+            text(`ب = ${(sideB/10).toFixed(1)} سم`, 0, 0);
+            text(`ب² = ${(sideB * sideB / 100).toFixed(2)} سم²`, 0, 20);
+            pop();
+            
+            // Text for hypotenuse
+            push();
+            translate(-sideA/2, sideB/2);
+            rotate(-atan2(sideB, sideA) - PI/2);
+            text(`ج = ${(hypotenuse/10).toFixed(2)} سم`, hypotenuse/2, -hypotenuse/4);
+            text(`ج² = ${(hypotenuse * hypotenuse / 100).toFixed(2)} سم²`, hypotenuse/2, -hypotenuse/4 + 20);
+            pop();
+            
+            // Display the theorem
+            textAlign(RIGHT, BOTTOM);
+            textSize(18);
+            text(`أ² + ب² = ج²`, width/2 - 10, height/2 - 40);
+            text(`${(sideA * sideA / 100).toFixed(2)} + ${(sideB * sideB / 100).toFixed(2)} = ${(hypotenuse * hypotenuse / 100).toFixed(2)} سم²`, width/2 - 10, height/2 - 20);
+        }
+    </script>
+</body>
+</html>
