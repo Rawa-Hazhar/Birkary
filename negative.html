@@ -6,6 +6,7 @@
     <title>ژمارە نەرێیەکان - ئەزموونی فێرکاری کاریگەر</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
         body {
@@ -126,7 +127,6 @@
             </div>
             <p class="text-center mt-4">بە ماوس یان پەنجە ژمارەکە بجووڵێنە و سەیری گۆڕانی بەهاکەی بکە</p>
         </section>
-
         <section class="mb-12 bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-xl fade-in">
             <h2 class="text-3xl font-bold mb-6 text-orange-700">هێماکانی نایەکسانی</h2>
             <p class="text-lg mb-4">هێماکانی نایەکسانی بەکاردێن بۆ نیشاندانی پەیوەندی نێوان دوو ژمارە:</p>
@@ -163,7 +163,7 @@
     </div>
 
     <script>
-        // کۆدی جاڤاسکریپت بۆ زیادکردنی کارلێک و ئەنیمەیشن
+        gsap.registerPlugin(ScrollTrigger);
 
         // ئەنیمەیشنی فەید-ئین بۆ بەشەکان
         gsap.from('.fade-in', {
