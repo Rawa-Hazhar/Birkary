@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ڕیزکردنی ژمارە تەواوەکان - وانەی ئینتەراکتیڤ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Naskh Arabic', 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-2xl">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center text-indigo-700">ڕیزکردنی ژمارە تەواوەکان</h1>
+        
+        <section id="intro" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-600">پێشەکی</h2>
+            <p class="mb-4">ڕیزکردنی ژمارە تەواوەکان یەکێکە لە بنەما گرنگەکانی بیرکاری. ئەم بنەمایە یارمەتیمان دەدات لە:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li>بەراوردکردنی بڕەکان</li>
+                <li>دۆزینەوەی گەورەترین و بچووکترین بەها</li>
+                <li>ڕێکخستنی داتا</li>
+                <li>چارەسەرکردنی کێشە ڕۆژانەییەکان</li>
+            </ul>
+            <p>لەم وانەیەدا، فێر دەبین چۆن بۆ ڕیزکردن و بەراوردکردنی ژمارەکان بەهای شوێن و هێماکانی نایەکسانی بەکاربهێنین.</p>
+        </section>
+
+        <section id="placeValue" class="mb-8 bg-blue-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">بەهای شوێن</h2>
+            <p class="mb-4">بەهای شوێن بنەمایەکی سەرەکییە بۆ تێگەیشتن لە ژمارەکان. هەر ژمارەیەک لە چەند خانەیەک پێکهاتووە کە هەر یەکەیان بەهایەکی تایبەتی هەیە.</p>
+            <div class="overflow-x-auto mb-4">
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-blue-200">
+                            <th class="border border-gray-300 p-2">یەکەکان</th>
+                            <th class="border border-gray-300 p-2">دەیەکان</th>
+                            <th class="border border-gray-300 p-2">سەدەکان</th>
+                            <th class="border border-gray-300 p-2">هەزارەکان</th>
+                            <th class="border border-gray-300 p-2">دە هەزارەکان</th>
+                            <th class="border border-gray-300 p-2">سەد هەزارەکان</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2 text-center">١</td>
+                            <td class="border border-gray-300 p-2 text-center">١٠</td>
+                            <td class="border border-gray-300 p-2 text-center">١٠٠</td>
+                            <td class="border border-gray-300 p-2 text-center">١,٠٠٠</td>
+                            <td class="border border-gray-300 p-2 text-center">١٠,٠٠٠</td>
+                            <td class="border border-gray-300 p-2 text-center">١٠٠,٠٠٠</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>بۆ نموونە، لە ژمارەی ١٢٣,٤٥٦ دا:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li>١ لە خانەی سەد هەزارەکان = ١٠٠,٠٠٠</li>
+                <li>٢ لە خانەی دە هەزارەکان = ٢٠,٠٠٠</li>
+                <li>٣ لە خانەی هەزارەکان = ٣,٠٠٠</li>
+                <li>٤ لە خانەی سەدەکان = ٤٠٠</li>
+                <li>٥ لە خانەی دەیەکان = ٥٠</li>
+                <li>٦ لە خانەی یەکەکان = ٦</li>
+            </ul>
+        </section>
+
+        <section id="orderingNumbers" class="mb-8 bg-green-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-green-700">ڕیزکردنی ژمارەکان</h2>
+            <p class="mb-4">کاتێک ژمارەکان ڕیز دەکەین، ئەم هەنگاوانە پەیڕەو دەکەین:</p>
+            <ol class="list-decimal list-inside mb-4">
+                <li>ژمارەکان لە خشتەی بەهای شوێن دادەنێین.</li>
+                <li>لە چەپەوە بۆ ڕاست، خانەکان بەراورد دەکەین.</li>
+                <li>یەکەم جیاوازی دیار دەبێتە بنەمای ڕیزکردنەکە.</li>
+            </ol>
+            <p class="mb-4">با نموونەیەک ببینین:</p>
+            <p class="font-bold mb-2">کام لەم چوار وەرزشوانە لە هەفتەیەکدا زیاتر پارە پەیدا دەکات؟</p>
+            <ul class="list-disc list-inside mb-4">
+                <li>یاریزانی ا - ٣١٠,٥٠٠</li>
+                <li>یاریزانی ب - ٣٠٩,٥٠٠</li>
+                <li>یاریزانی پ - ٢٩٥,٥٠٠</li>
+                <li>یاریزانی ت - ٣١٥,٥٠٠</li>
+            </ul>
+            <div class="overflow-x-auto mb-4">
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-green-200">
+                            <th class="border border-gray-300 p-2">یەکەکان</th>
+                            <th class="border border-gray-300 p-2">دەیەکان</th>
+                            <th class="border border-gray-300 p-2">سەدەکان</th>
+                            <th class="border border-gray-300 p-2">هەزارەکان</th>
+                            <th class="border border-gray-300 p-2">دە هەزارەکان</th>
+                            <th class="border border-gray-300 p-2">سەد هەزارەکان</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">٥</td>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">١</td>
+                            <td class="border border-gray-300 p-2 text-center">٣</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">٥</td>
+                            <td class="border border-gray-300 p-2 text-center">٩</td>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">٣</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">٥</td>
+                            <td class="border border-gray-300 p-2 text-center">٥</td>
+                            <td class="border border-gray-300 p-2 text-center">٩</td>
+                            <td class="border border-gray-300 p-2 text-center">٢</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">٠</td>
+                            <td class="border border-gray-300 p-2 text-center">٥</td>
+                            <td class="border border-gray-300 p-2 text-center">٥</td>
+                            <td class="border border-gray-300 p-2 text-center">١</td>
+                            <td class="border border-gray-300 p-2 text-center">٣</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<p class="mb-4">لە چەپەوە بۆ ڕاست:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li>لە خانەی سەد هەزارەکان، پ بچووکترینە (٢).</li>
+                <li>لە خانەی دە هەزارەکان، ب بچووکترینە لە نێوان ا و ت (٠).</li>
+                <li>لە خانەی هەزارەکان، ا بچووکترینە لە نێوان ا و ت (٠).</li>
+            </ul>
+            <p class="font-bold">لە زۆرەوە بۆ کەم، ڕیزبەندییەکە بەم شێوەیەیە:</p>
+            <ol class="list-decimal list-inside">
+                <li>یاریزانی ت - ٣١٥,٥٠٠</li>
+                <li>یاریزانی ا - ٣١٠,٥٠٠</li>
+                <li>یاریزانی ب - ٣٠٩,٥٠٠</li>
+                <li>یاریزانی پ - ٢٩٥,٥٠٠</li>
+            </ol>
+        </section>
+
+        <section id="inequalitySymbols" class="mb-8 bg-yellow-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-yellow-700">هێماکانی نایەکسانی</h2>
+            <p class="mb-4">هێماکانی نایەکسانی بۆ بەراوردکردنی ژمارەکان پێویستن:</p>
+            <div class="overflow-x-auto mb-4">
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-yellow-200">
+                            <th class="border border-gray-300 p-2">هێما</th>
+                            <th class="border border-gray-300 p-2">پێناسە</th>
+                            <th class="border border-gray-300 p-2">نموونە</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2 text-center">&gt;</td>
+                            <td class="border border-gray-300 p-2">گەورەتر لە</td>
+                            <td class="border border-gray-300 p-2">٥ &gt; ٣ (٥ گەورەترە لە ٣)</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2 text-center">&lt;</td>
+                            <td class="border border-gray-300 p-2">بچووکتر لە</td>
+                            <td class="border border-gray-300 p-2">٢ &lt; ٤ (٢ بچووکترە لە ٤)</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2 text-center">≥</td>
+                            <td class="border border-gray-300 p-2">گەورەتر یان یەکسان</td>
+                            <td class="border border-gray-300 p-2">٦ ≥ ٦ (٦ گەورەتر یان یەکسانە بە ٦)</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2 text-center">≤</td>
+                            <td class="border border-gray-300 p-2">بچووکتر یان یەکسان</td>
+                            <td class="border border-gray-300 p-2">٣ ≤ ٥ (٣ بچووکتر یان یەکسانە بە ٥)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4">تێبینی: بەشی پانی هێماکە هەمیشە ڕووی لە ژمارە گەورەکەیە.</p>
+        </section>
+
+        <section id="practice" class="mb-8 bg-red-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-red-700">ڕاهێنان</h2>
+            <p class="mb-4">ئەم ژمارانە لە بچووکەوە بۆ گەورە بە ڕاکێشان و فڕێدان، ڕیز بکە:</p>
+            <ul id="numberList" class="list-none p-0 mb-4">
+                <li class="bg-white p-2 mb-2 rounded shadow cursor-move">٤٢,٣٠٠</li>
+                <li class="bg-white p-2 mb-2 rounded shadow cursor-move">٤٣,٢٩٠</li>
+                <li class="bg-white p-2 mb-2 rounded shadow cursor-move">٤٢,٣٥٠</li>
+                <li class="bg-white p-2 mb-2 rounded shadow cursor-move">٤٣,٢٠٠</li>
+                <li class="bg-white p-2 mb-2 rounded shadow cursor-move">٤٢,٢٥٠</li>
+            </ul>
+            <button id="checkAnswerBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">پشکنینی وەڵام</button>
+            <p id="answerFeedback" class="mt-4 hidden"></p>
+        </section>
+
+        <section id="additionalExercise" class="mb-8 bg-purple-50 p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4 text-purple-700">ڕاهێنانی زیاتر</h2>
+            <p class="mb-4">بۆ بەراوردکردنی ئەم ژمارانە هێمای نایەکسانی دروست هەڵبژێرە:</p>
+            <div id="inequalityExercise" class="space-y-4">
+                <div class="flex items-center justify-center space-x-4">
+                    <span>٧٥٠</span>
+                    <select class="border rounded p-1">
+                        <option value="">&lt;&lt;&gt;&gt;</option>
+                        <option value=">">&gt;</option>
+                        <option value="<">&lt;</option>
+                        <option value="≥">≥</option>
+                        <option value="≤">≤</option>
+                    </select>
+                    <span>٥٧٠</span>
+                </div>
+                <div class="flex items-center justify-center space-x-4">
+                    <span>١,٢٠٠</span>
+                    <select class="border rounded p-1">
+                        <option value="">&lt;&lt;&gt;&gt;</option>
+                        <option value=">">&gt;</option>
+                        <option value="<">&lt;</option>
+                        <option value="≥">≥</option>
+                        <option value="≤">≤</option>
+                    </select>
+                    <span>١,٢٠٠</span>
+                </div>
+            </div>
+            <button id="checkInequalityBtn" class="mt-4 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">پشکنینی وەڵام</button>
+            <p id="inequalityFeedback" class="mt-4 hidden"></p>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script>
+        // ڕاکێشان و فڕێدان بۆ لیستی ژمارەکان
+        new Sortable(document.getElementById('numberList'), {
+            animation: 150,
+            ghostClass: 'bg-gray-200'
+        });
+
+        // پشکنینی وەڵامی ڕیزکردنی ژمارەکان
+        document.getElementById('checkAnswerBtn').addEventListener('click', function() {
+            const correctOrder = ['٤٢,٢٥٠', '٤٢,٣٠٠', '٤٢,٣٥٠', '٤٣,٢٠٠', '٤٣,٢٩٠'];
+            const userOrder = Array.from(document.querySelectorAll('#numberList li')).map(item => item.textContent);
+            
+            const isCorrect = JSON.stringify(userOrder) === JSON.stringify(correctOrder);
+            
+            const feedbackElement = document.getElementById('answerFeedback');
+            feedbackElement.classList.remove('hidden');
+            
+            if (isCorrect) {
+                feedbackElement.textContent = 'زۆر باشە! تۆ بە دروستی ژمارەکانت ڕیز کردووە.';
+                feedbackElement.className = 'mt-4 text-green-600 font-bold';
+            } else {
+                feedbackElement.textContent = 'ببوورە، ئەمە دروست نییە. تکایە دووبارە هەوڵ بدەوە.';
+                feedbackElement.className = 'mt-4 text-red-600 font-bold';
+            }
+        });
+
+        // پشکنینی وەڵامی هێماکانی نایەکسانی
+        document.getElementById('checkInequalityBtn').addEventListener('click', function() {
+            const correctAnswers = ['>', '≥'];
+            const userAnswers = Array.from(document.querySelectorAll('#inequalityExercise select')).map(select => select.value);
+            
+            const isCorrect = JSON.stringify(userAnswers) === JSON.stringify(correctAnswers);
+            
+            const feedbackElement = document.getElementById('inequalityFeedback');
+            feedbackElement.classList.remove('hidden');
+            
+            if (isCorrect) {
+                feedbackElement.textContent = 'زۆر باشە! تۆ هێماکانی نایەکسانیت بە دروستی هەڵبژاردووە.';
+                feedbackElement.className = 'mt-4 text-green-600 font-bold';
+            } else {
+                feedbackElement.textContent = 'ببوورە، هەندێک هەڵە هەیە. تکایە دووبارە هەوڵ بدەوە.';
+                feedbackElement.className = 'mt-4 text-red-600 font-bold';
+            }
+        });
+    </script>
+</body>
+</html>
