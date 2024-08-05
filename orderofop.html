@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ڕیزبەندی ئەنجامدانی کردارە بیرکارییەکان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .highlight {
+            transition: all 0.3s ease;
+        }
+        .highlight:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 text-gray-800">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-3xl shadow-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center text-indigo-800 fade-in">ڕیزبەندی ئەنجامدانی کردارە بیرکارییەکان</h1>
+        
+        <section class="mb-12 bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-700">پێشەکی</h2>
+            <p class="text-lg mb-4">لە بیرکاریدا، گرنگە کە کردارە بیرکارییەکان بە ڕیزبەندییەکی دیاریکراو ئەنجام بدرێن. ئەم ڕیزبەندییە یارمەتیمان دەدات کە هەموو کات ئەنجامی دروست بەدەست بهێنین.</p>
+        </section>
+
+        <section class="mb-12 bg-gradient-to-r from-blue-100 to-teal-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-blue-700">BODMAS/BIDMAS چییە؟</h2>
+            <p class="text-lg mb-4">BODMAS/BIDMAS کورتکراوەیەکە بۆ بیرخستنەوەی ڕیزبەندی دروستی ئەنجامدانی کردارە بیرکارییەکان:</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow-lg highlight">
+                    <h3 class="text-xl font-bold text-blue-600">B</h3>
+                    <p>کەوانەکان (Brackets)</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg highlight">
+                    <h3 class="text-xl font-bold text-blue-600">O/I</h3>
+                    <p>توان (Order/Indices)</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg highlight">
+                    <h3 class="text-xl font-bold text-blue-600">D</h3>
+                    <p>دابەشکردن (Division)</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg highlight">
+                    <h3 class="text-xl font-bold text-blue-600">M</h3>
+                    <p>لێکدان (Multiplication)</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg highlight">
+                    <h3 class="text-xl font-bold text-blue-600">A</h3>
+                    <p>کۆکردنەوە (Addition)</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg highlight">
+                    <h3 class="text-xl font-bold text-blue-600">S</h3>
+                    <p>لێدەرکردن (Subtraction)</p>
+                </div>
+            </div>
+            <p class="mt-4 text-lg">دابەشکردن و لێکدان هاوپلەن، هەروەها کۆکردنەوە و لێدەرکردنیش. کاتێک دوو کرداری هاوپلە هەبن، لە چەپەوە بۆ ڕاست ئەنجامیان دەدەین.</p>
+        </section>
+
+        <section class="mb-12 bg-gradient-to-r from-green-100 to-yellow-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">نموونە</h2>
+            <p class="text-lg mb-4">با ئەم هاوکێشەیە چارەسەر بکەین: ٣ + ٤² - ١٠ ÷ ٢</p>
+            <div id="exampleSteps" class="space-y-4">
+                <!-- هەنگاوەکان لێرە زیاد دەکرێن -->
+            </div>
+        </section>
+
+        <section class="mb-12 bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-yellow-700">ڕاهێنان</h2>
+            <p class="text-lg mb-4">ئێستا نۆرەی تۆیە! ئەم هاوکێشەیە چارەسەر بکە:</p>
+            <p class="text-2xl font-bold mb-4 text-center">٢² × ٥ - ٦ ÷ ٣</p>
+            <div class="flex flex-col items-center space-y-4">
+                <input type="number" id="practiceInput" class="border-2 border-yellow-500 rounded-lg p-2 w-full md:w-1/2" placeholder="وەڵام">
+                <button id="checkAnswerBtn" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg w-full md:w-1/2">پشکنینی وەڵام</button>
+            </div>
+            <p id="practiceAnswer" class="mt-4 text-center font-bold hidden"></p>
+            <div id="practiceSteps" class="mt-4 space-y-2 hidden"></div>
+        </section>
+
+        <section class="mb-12 bg-gradient-to-r from-pink-100 to-red-100 p-6 rounded-xl fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-pink-700">ڕاهێنانی کەوانە</h2>
+            <p class="text-lg mb-4">یەک جووت کەوانە زیاد بکە بۆ ئەوەی ئەم ڕستە بیرکارییە ڕاست بێت:</p>
+            <p class="text-2xl font-bold mb-4 text-center">١٧ - ٥ × ٢ + ٤ = ٢٨</p>
+            <div class="flex flex-col items-center space-y-4">
+                <input type="text" id="bracketInput" class="border-2 border-pink-500 rounded-lg p-2 w-full md:w-1/2" placeholder="وەڵام (بە کەوانەوە)">
+                <button id="checkBracketBtn" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg w-full md:w-1/2">پشکنینی وەڵام</button>
+            </div>
+            <p id="bracketAnswer" class="mt-4 text-center font-bold hidden"></p>
+        </section>
+    </div>
+
+    <script>
+        const exampleSteps = [
+            { step: "هەنگاو ١", explanation: "کەوانە (B) نییە، کەواتە یەکەم جار توان (O/I) ئەنجام دەدەین. ٤² = ١٦", result: "٣ + ١٦ - ١٠ ÷ ٢" },
+            { step: "هەنگاو ٢", explanation: "دابەشکردن (D) ئەنجام دەدەین. ١٠ ÷ ٢ = ٥", result: "٣ + ١٦ - ٥" },
+            { step: "هەنگاو ٣", explanation: "لە چەپەوە بۆ ڕاست کۆکردنەوە و لێدەرکردن (AS) ئەنجام دەدەین. ٣ + ١٦ = ١٩، پاشان ١٩ - ٥ = ١٤", result: "١٤" }
+        ];
+
+        const exampleContainer = document.getElementById('exampleSteps');
+        exampleSteps.forEach((step, index) => {
+            const stepElement = document.createElement('div');
+            stepElement.className = 'bg-white p-4 rounded-lg shadow-lg highlight';
+            stepElement.innerHTML = `
+                <h3 class="text-xl font-bold text-green-600">${step.step}</h3>
+                <p>${step.explanation}</p>
+                <p class="mt-2 font-bold">هاوکێشەکە دەبێتە: ${step.result}</p>
+            `;
+            exampleContainer.appendChild(stepElement);
+        });
+
+        document.getElementById('checkAnswerBtn').addEventListener('click', function() {
+            const userAnswer = parseInt(document.getElementById('practiceInput').value);
+            const correctAnswer = Math.pow(2, 2) * 5 - 6 / 3;
+            const answerElement = document.getElementById('practiceAnswer');
+            const stepsElement = document.getElementById('practiceSteps');
+
+            answerElement.classList.remove('hidden');
+            stepsElement.classList.remove('hidden');
+
+            if (Math.abs(userAnswer - correctAnswer) < 0.01) {
+                answerElement.textContent = 'ئافەرین! وەڵامەکەت دروستە.';
+                answerElement.className = 'mt-4 text-center font-bold text-green-600';
+            } else {
+                answerElement.textContent = 'ببورە، وەڵامەکەت دروست نییە. با هەنگاوەکان ببینین:';
+                answerElement.className = 'mt-4 text-center font-bold text-red-600';
+            }
+
+            stepsElement.innerHTML = `
+                <p>١. ٢² = ٤</p>
+                <p>٢. ٤ × ٥ = ٢٠</p>
+                <p>٣. ٦ ÷ ٣ = ٢</p>
+                <p>٤. ٢٠ - ٢ = ١٨</p>
+                <p class="font-bold">وەڵامی دروست: ١٨</p>
+            `;
+        });
+
+        document.getElementById('checkBracketBtn').addEventListener('click', function() {
+            const userAnswer = document.getElementById('bracketInput').value;
+            const correctAnswer = "(17-5)×2+4";
+            const answerElement = document.getElementById('bracketAnswer');
+
+            answerElement.classList.remove('hidden');
+
+            if (userAnswer === correctAnswer) {
+                answerElement.textContent = 'ئافەرین! وەڵامەکەت دروستە. کەوانەکان لە شوێنی دروست داندراون.';
+                answerElement.className = 'mt-4 text-center font-bold text-green-600';
+            } else {
+                answerElement.textContent = 'ببورە، وەڵامەکەت دروست نییە. وەڵامی دروست: (١٧-٥)×٢+٤';
+                answerElement.className = 'mt-4 text-center font-bold text-red-600';
+            }
+        });
+    </script>
+</body>
+</html>
