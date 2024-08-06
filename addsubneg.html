@@ -189,5 +189,67 @@
             });
         });
     </script>
+    <footer class="bg-gray-100 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-center mb-6 text-indigo-700">بابەتەکانی بەردەست</h2>
+        <ul id="lessonList" class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+            <li><a href="numbers1.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">ژمارەکان</a></li>
+            <li><a href="wholenumb.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">ژمارە تەواوەکان</a></li>
+            <li><a href="negative.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">ژمارە نەرێنییەکان</a></li>
+            <li><a href="addandsub.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">کۆکردنەوە و لێدەرکردن</a></li>
+            <li><a href="addsubneg.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">کۆکردنەوە و لێدەرکردنی ژمارە نەرێنییەکان</a></li>
+            <li><a href="multdiv.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">لێکدان و دابەشکردن</a></li>
+            <li><a href="multdivneg.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">لێکدان و دابەشکردنی ژمارە نەرێنییەکان</a></li>
+            <li><a href="orderofop.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">ڕیزبەندی ئەنجامدانی کردارەکان</a></li>
+            <li><a href="usecal.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">بەکارهێنانی ژمێرەر</a></li>
+            <li><a href="test.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">تاقیکردنەوە</a></li>
+            <li><a href="pysa.html" class="block p-3 bg-white rounded shadow hover:bg-indigo-100 transition">تیۆرمی فیساگۆرس</a></li>
+        </ul>
+        <div class="flex justify-between">
+            <button id="prevLesson" class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition">وانەی پێشوو</button>
+            <button id="nextLesson" class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition">وانەی داهاتوو</button>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const lessonList = document.getElementById('lessonList').getElementsByTagName('a');
+        const prevButton = document.getElementById('prevLesson');
+        const nextButton = document.getElementById('nextLesson');
+        let currentIndex = -1;
+
+        // دۆزینەوەی ئیندێکسی وانەی ئێستا
+        for (let i = 0; i < lessonList.length; i++) {
+            if (lessonList[i].href === window.location.href) {
+                currentIndex = i;
+                break;
+            }
+        }
+
+        // ئەپدەیتکردنی دۆخی دوگمەکان
+        function updateButtonStates() {
+            prevButton.disabled = currentIndex <= 0;
+            nextButton.disabled = currentIndex >= lessonList.length - 1;
+            prevButton.style.opacity = prevButton.disabled ? '0.5' : '1';
+            nextButton.style.opacity = nextButton.disabled ? '0.5' : '1';
+        }
+
+        // چالاککردنی دوگمەکان
+        prevButton.addEventListener('click', function() {
+            if (currentIndex > 0) {
+                window.location.href = lessonList[currentIndex - 1].href;
+            }
+        });
+
+        nextButton.addEventListener('click', function() {
+            if (currentIndex < lessonList.length - 1) {
+                window.location.href = lessonList[currentIndex + 1].href;
+            }
+        });
+
+        updateButtonStates();
+    });
+</script>
 </body>
 </html>
