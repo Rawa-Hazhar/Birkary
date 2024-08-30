@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شیکردنەوەی جووڵەی تەنێک</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        h1 {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .content {
+            padding: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .math {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            direction: ltr;
+            text-align: left;
+        }
+        .math:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .step {
+            background-color: #fff;
+            border-right: 5px solid #3498db;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        ul {
+            padding-right: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>شیکردنەوەیی جووڵەی تەنێک</h1>
+        <div class="content">
+            <p class="fade-in">با بە شێوەیەکی زۆر سادە دەست پێ بکەین. وا دابنێ  تەنێکمان هەیە m₁ کە لە بۆشایدا دەجووڵێت و کاریگەری هیچ هێزێکی دەرەکەی لەسەر نییە. ئەمەش مانای وایە کە تەنەکە لە جووڵەی ئازاددایە.</p>
+
+            <div class="step fade-in">
+                <h2>هەنگاوی ١: یاسای یەکەمی "جووڵەی نیوتن"</h2>
+                <p>یاسای یەکەمی نیوتن دەڵێت:</p>
+                <p><em>تەنێک کە لە حاڵەتی وەستان یان جووڵەی نەگۆڕدا بێت، تا کاتێک هێزێکی دەرەکی کاری تێ نەکات لەو حاڵەتەدا دەمێنێتەوە..</em></p>
+                <p>لەبەر ئەوەی هیچ هێزێکی دەرەکی کار لە m₁ ناکات، خێراییەکەی بە نەگۆڕی دەمێنێتەوە. بە شێوەیەکی بیرکاری، ئەگەر v₁(t) خێرایی تەنەکە بێت، دەتوانین بنووسین:</p>
+                <div class="math">
+                    \[\frac{d \vec{v}_1}{dt} = 0\]
+                </div>
+            </div>
+
+            <div class="step fade-in">
+                <h2>هەنگاوی ٢: شوێنی تەنەکە بە تێپەڕبوونی کات</h2>
+                <p>دەتوانرێت شوێنی تەنەکە، r₁(t)، لە هەر کاتێکی t دا،  بە بەکارهێنانی خێراییە جێگیرەکەی دیاری بکرێت. لەبەر ئەوەی خێرایی ڕێژەی گۆڕانی شوێنە، ئەوا دەبێت:</p>
+                <div class="math">
+                    \[\vec{v}_1 = \frac{d \vec{r}_1}{dt}\]
+                </div>
+                <p>ئەگەر ئەمە بەگوێرەی کات یەکخەین:</p>
+                <div class="math">
+                    \[\vec{r}_1(t) = \vec{r}_1(0) + \vec{v}_1 t\]
+                </div>
+                <p>لەوێدا:</p>
+                <ul>
+                    <li>r₁(0) شوێنی سەرەتایی تەنەکەیە لە کاتی t = 0.</li>
+                    <li>v₁ ڤێکتەری خێرایی جێگیری تەنەکەیە.</li>
+                </ul>
+                <p>ئەم هاوکێشەیە پێمان دەڵێت کە شوێنی تەنی m₁ ئەگەر بە خێراییەکی جێگیر بجووڵێت ئەوا بە شێوەیەکی هێڵی لەگەڵ کاتدا دەگۆڕێت. کەواتە لەم دۆخەدا لەمە زیاتر پێویست نییە و ئێستا با هەوڵبدەین ئاڵۆزتری بکەین .</p>
+            </div>
+
+            <div class="step fade-in">
+                <h2>هەنگاوی ٣: ئەگەر هێزێک کار لە تەنەکە بکات</h2>
+                <p>ئێستا، با بیر لەوە بکەینەوە چی ڕوودەدات ئەگەر هێزێکی F₁ کار لە تەنەکە بکات. بەگوێرەی <strong>یاسای دووەمی جووڵەی نیوتن</strong>:</p>
+                <div class="math">
+                    \[\vec{F}_1 = m_1 \frac{d \vec{v}_1}{dt}\]
+                </div>
+                <p>ئەگەر هێزی F₁ سفر نەبێت، ئەوا خێراییەکی a₁ = dv₁/dt دروست دەکات، کە خێرایی تەنەکە بەم شێوەیە دەگۆڕێت:</p>
+                <div class="math">
+                    \[\vec{a}_1 = \frac{\vec{F}_1}{m_1}\]
+                </div>
+            </div>
+
+            <div class="step fade-in">
+                <h2>هەنگاوی ٤: خێرایی و شوێنی نوێ لەگەڵ هێزێکی دەرەکی</h2>
+                <p>بێگومان ئەگەر هێزێکی جێگیری F₁ کار لە تەنەکە بکات، خێراییەکەی بە تێپەڕبوونی کات دەگۆڕێت:</p>
+                <div class="math">
+                    \[\vec{v}_1(t) = \vec{v}_1(0) + \vec{a}_1 t\]
+                </div>
+                <p>لەوێدا v₁(0) خێرایی سەرەتاییە.</p>
+                <p>لەبەر ئەوەی a₁ = F₁/m₁، دەتوانین بنووسین:</p>
+                <div class="math">
+                    \[\vec{v}_1(t) = \vec{v}_1(0) + \frac{\vec{F}_1}{m_1} t\]
+                </div>
+                <p>بە لەبەرچاوگرتنی ئەم خێراییە، شوێنی تەنەکە بە تێپەڕبوونی کات، دەتوانرێت بە یەکخستنی خێراییەکە بدۆزرێتەوە :</p>
+                <div class="math">
+                    \[\vec{r}_1(t) = \vec{r}_1(0) + \vec{v}_1(0) t + \frac{1}{2} \vec{a}_1 t^2\]
+                </div>
+                <p>جێگۆڕکێ بۆ a₁ بکە:</p>
+                <div class="math">
+                    \[\vec{r}_1(t) = \vec{r}_1(0) + \vec{v}_1(0) t + \frac{1}{2} \frac{\vec{F}_1}{m_1} t^2\]
+                </div>
+            </div>
+
+            <div class="step fade-in">
+                <h2>هەنگاوی ٥: دەرەنجام</h2>
+                <p>تێبینی بکە ئەم هاوکێشەیە بە تەواوی جووڵەی تەنی m₁ بەبێ هیچ ناڕوونییەک شی دەکاتەوە  کاتێک کە دەکەوێتە ژێر کاریگەری هێزی جێگیری F₁. ئێستا دەزانین کە خێرایی تەنەکە بەهۆی هێزەکەوە بە شێوەیەکی هێڵی لەگەڵ کاتدا دەگۆڕێت، وە شوێنەکەی بە شێوەیەکی دووجایی لەگەڵ کاتدا دەگۆڕێت. ئەمە دەبێتە بنچینەی سەرەکی شیکردنەوەی جووڵەی تاکە تەنێک لە میکانیکی کلاسیکیدا.</p>
+                <p>ئێستا بە تێگەیشتن لە جووڵەی تاکە تەنێک، بنچینەیەکمان هەیە بۆ سیناریۆی ئاڵۆزترەکانی وەکو کێشەی دوو-تەن یان سێ-تەن، کە تیایدا چەند تەنێک کار لە یەکتر دەکەن.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false}
+                ]
+            });
+
+            // Add fade-in effect
+            const steps = document.querySelectorAll('.step');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            steps.forEach(step => {
+                observer.observe(step);
+            });
+        });
+    </script>
+</body>
+</html>

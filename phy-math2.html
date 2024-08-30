@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شیکردنەوەی جووڵەی دوو تەن لەژێر کاریگەری هێزی کێشکردنی دوولایەنەدا</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        h1 {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .content {
+            padding: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .math {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            direction: ltr;
+            text-align: left;
+        }
+        .math:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .step {
+            background-color: #fff;
+            border-right: 5px solid #3498db;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        ul {
+            padding-right: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>شیکردنەوەی جووڵەی دوو تەن لەژێر کاریگەری هێزی کێشکردنی دوولایەنەدا</h1>
+        <div class="content">
+            <p class="fade-in">
+            ئێستا، با تەنی دووەم، m₂، بۆ سیستەمەکە زیاد بکەین و لە ژێر کاریگەری هێزی کێشکردنی دوولایەنەدا شیکردنەوە بۆ جووڵەی هەردوو تەنەکە بکەین. هەوڵ دەدەم بە پشتبەستن بە یاساکانی نیوتن و  تەنها بەبەکارهێنانی پرنسیپە سەرەتاییەکان بەبێ هیچ ئاڵۆزکردنێکی ناپێویست هاوکێشەکانی جووڵە بۆ هەر تەنێک دابڕێژمەوە.
+            </p>
+
+            <h2>شیکردنەوە بۆ دوو تەن لەژێر کاریگەری هێزی کێشکردنی دوولایەنەدا</h2>
+            <p>
+            گریامن دوو تەنمان هەیە بە بارستاییەکانی m₁ و m₂، لە شوێنەکانی r₁(t) و r₂(t) لە بۆشایی سێ ڕەهەندیدا. بێگوومان ئەم دوو تەنە هێزی کێشکردنی گەردوونی لە نێوانیاندایە.
+            </p>
+
+            <div class="step fade-in">
+                <h3>هەنگاوی ١: هێزی کێشکردنی گەردوونی لە نێوان دوو تەندا</h3>
+                <p>
+                بەپێی یاسای کێشکردنی گەردوونی نیوتن، هێزی کێشکردنی گەردوونی کە m₂ لە m₁ دەکات بریتییە لە:
+                </p>
+                <div class="math">
+                \[F_{12} = -G \frac{m_1 m_2}{|r_1 - r_2|^2} \hat{r}_{12},\]
+                </div>
+                <p>
+                لەوێدا:
+                </p>
+                <ul>
+                    <li>G نەگۆڕی کێشکردنی گەردوونییە.</li>
+                    <li>\(\hat{r}_{12} = \frac{r_1 - r_2}{|r_1 - r_2|}\) ڤێکتەرێکە کە لە m₂ ـەوە بۆ m₁ ئاڕاستە کراوە.</li>
+                    <li>|r₁ - r₂| دووری نێوان m₁ و m₂ یە.</li>
+                </ul>
+                <p>
+                ئەم هێزە دەکرێت بە شێوەی ڤێکتەریش بنووسرێت:
+                </p>
+                <div class="math">
+                \[F_{12} = -G \frac{m_1 m_2}{|r_1 - r_2|^3} (r_1 - r_2).\]
+                </div>
+                <p>
+                بە هەمان شێوە، هێزی کێشکردنی گەردوونی کە m₁ لە m₂ دەکات بریتییە لە:
+                </p>
+                <div class="math">
+                \[F_{21} = -G \frac{m_1 m_2}{|r_2 - r_1|^3} (r_2 - r_1).\]
+                </div>
+                <p>
+                تێبینی بکە کە F₂₁ = -F₁₂، کە لەگەڵ یاسای سێیەمی نیوتندا یەک دەگرێتەوە (کردار و کاردانەوە یەکسانن و پێچەوانەن) ئەم تێبینییە زۆر گرنگە، دواتر دەیبینیت کە وەکو چارەسەر بۆ کێشەی دوو تەن سوودی لێ دەبینمەوە...
+                </p>
+            </div>
+
+            <div class="step fade-in">
+                <h3>هەنگاوی ٢: هاوکێشەکانی جووڵە بۆ هەر تەنێک</h3>
+                <p>
+                بە بەکارهێنانی یاسای دووەمی جووڵە، خێرایی هەر تەنێک لەگەڵ تێکڕای هێزی پاڵنەری کارکردوو لەسەری ڕێژەیی دەبێت :
+                </p>
+                <p>
+                بۆ تەنی m₁:
+                </p>
+                <div class="math">
+                \[m_1 \frac{d^2r_1}{dt^2} = F_{12}.\]
+                </div>
+                <p>
+                جێگۆڕکێ بۆ دەربڕینی F₁₂ بکە:
+                </p>
+                <div class="math">
+                \[m_1 \frac{d^2r_1}{dt^2} = -G \frac{m_1 m_2}{|r_1 - r_2|^3} (r_1 - r_2).\]
+                </div>
+                <p>
+                سادەی بکەرەوە بە لابردنی m₁:
+                </p>
+                <div class="math">
+                \[\frac{d^2r_1}{dt^2} = -G \frac{m_2}{|r_1 - r_2|^3} (r_1 - r_2).\]
+                </div>
+                <p>
+                بۆ تەنی m₂:
+                </p>
+                <div class="math">
+                \[m_2 \frac{d^2r_2}{dt^2} = F_{21}.\]
+                </div>
+                <p>
+                جێگۆڕکێ بۆ دەربڕینی F₂₁ بکە:
+                </p>
+                <div class="math">
+                \[m_2 \frac{d^2r_2}{dt^2} = -G \frac{m_1 m_2}{|r_2 - r_1|^3} (r_2 - r_1).\]
+                </div>
+                <p>
+                سادەی بکەرەوە بە لابردنی m₂:
+                </p>
+                <div class="math">
+                \[\frac{d^2r_2}{dt^2} = -G \frac{m_1}{|r_2 - r_1|^3} (r_2 - r_1).\]
+                </div>
+            </div>
+
+            <div class="step fade-in">
+                <h3>هەنگاوی ٣: وچانێک بۆ تێگەیشتن لە هاوکێشەکانی جووڵە</h3>
+                <p>
+                هەر یەک لەم هاوکێشانە وەسفی خێرایی یەک تەن دەکەن کە بەهۆی هێزی کێشکردنی گەردوونییەوە لەلایەن تەنەکەی ترەوە کێشدەکرێت:
+                </p>
+                <ul>
+                    <li>خێرایی m₁ بەرەو m₂ ئاڕاستە کراوە و پێچەوانە ڕێژەییە لەگەڵ دووجای دووری نێوانیان.</li>
+                    <li>بە هەمان شێوە، خێرایی m₂ بەرەو m₁ ئاڕاستە کراوە و هەمان یاسای دووجای پێچەوانە پەیڕەو دەکات.</li>
+                </ul>
+                <p>
+                ئەم هاوکێشانە سیستەمێکی پێکەوەبەستراوی هاوکێشە داتاشراوە پلە دووەکان پێکدەهێنن. پێکەوە دەتوانن وەسفی ئەوە بکەن کە چۆن بە تێپەڕبوونی کات و لە ژێر کاریگەری کێشکردنی دوولایەنەدا شوێنی تەنەکان r₁(t) و r₂(t) دەگۆڕێن.
+                </p>
+            </div>
+
+            <div class="step fade-in">
+                <h3>هەنگاوی ٤: کەمکردنەوە بۆ جووڵەی ڕێژەیی</h3>
+                <p>
+                بۆ سادەکردنەوەی شیکردنەوەکە، دەتوانین بە خستنەڕووی دەربڕینیکی جیاوازتر و بە شێوەیەکی ڕێژەیی، بۆ وەسفکردنی جووڵەکە، گۆڕاوەکان بگۆڕین بۆ چەقی بارستایی و شوێن .
+                </p>
+                <p>
+                نموونەی ئەم شوێنە ڕێژەییە دەبێتە :
+                </p>
+                <div class="math">
+                \[r = r_1 - r_2\]
+                </div>
+                <p>
+                ئەم دەربڕینە نوێنەرایەتی شوێنی ڕێژەیی m₁ دەکات بە بەراورد بە m₂.
+                </p>
+                <p>
+                بۆیە چەقی بارستاییەکە دەبێتە :
+                </p>
+                <div class="math">
+                \[R = \frac{m_1 r_1 + m_2 r_2}{m_1 + m_2}\]
+                </div>
+                <p>
+                ئەم دەربڕینەش نوێنەرایەتی شوێنی چەقی بارستایی سیستەمی دوو-تەنەکە دەکات.
+                </p>
+            </div>
+
+            <div class="step fade-in">
+                <h3>هەنگاوی ٥: هاوکێشەکانی جووڵە بە دەربڕینی شوێنی ڕێژەیی</h3>
+                <p>
+                ئێستا هاوکێشەکانی جووڵە بە دەربڕینی r و R دەردەبڕین:
+                </p>
+                <p>
+                جووڵەی ڕێژەیی:
+                </p>
+                <p>
+                خێراییەکی ڕێژەیی نێوان m₁ و m₂ بریتییە لە:
+                </p>
+                <div class="math">
+                \[\frac{d^2r}{dt^2} = \frac{d^2r_1}{dt^2} - \frac{d^2r_2}{dt^2}.\]
+                </div>
+                <p>
+                جێگۆڕکێ بۆ هاوکێشەکانی d²r₁/dt² و d²r₂/dt² بکە:
+                </p>
+                <div class="math">
+                \[\frac{d^2r}{dt^2} = -G \left(\frac{m_2}{|r|^3}r + \frac{m_1}{|r|^3}(-r)\right).\]
+                </div>
+                <p>
+                سادەی بکەرەوە بۆ:
+                </p>
+                <div class="math">
+                \[\frac{d^2r}{dt^2} = -G\frac{m_1 + m_2}{|r|^3}r.\]
+                </div>
+                <p>
+                ئەمە هاوکێشەی جووڵەیە بۆ ڤێکتەری شوێنی ڕێژەیی r، دەبینیت کە پیشانی دەدات جووڵەی ڕێژەیی هەردوو تەنەکە هاوتایە لەگەڵ جووڵەی تەنێکی تاک لەژێر کاریگەری هێزی کێشکردنی گەردوونی بەهۆی بارستاییەکی تێکەڵکراوی m₁ + m₂.
+                </p>
+                <p>
+                جووڵەی چەقی بارستایی:
+                </p>
+                <p>
+                لەبەر ئەوەی هیچ هێزێکی دەرەکی نییە، چەقی بارستایی بە خێراییەکی نەگۆڕ دەجووڵێت:
+                </p>
+                <div class="math">
+                \[\frac{d^2R}{dt^2} = 0.\]
+                </div>
+            </div>
+
+            <div class="step fade-in">
+                <h3>هەنگاوی ٦: چارەسەری کێشەی دوو-تەن</h3>
+                <p>
+                کەواتە ئەوەی کە زۆر گرنگە ئەوەیە کە کێشەی دوو-تەنی دەکرێت کەم بکرێتەوە بۆ کێشەیەکی تاکە-تەنی بە لەبەرچاوگرتنی جووڵەی ڕێژەیی:
+                </p>
+                <ul>
+                    <li>ئێستا ئەوەش دەزانین کە جووڵە ڕێژەییەکە بەپێی وزەی گشتی و گوڕی گۆشەیی سیستەمەکە لە شێوەی خولگەیەکی (هێلکەیی، پارابۆڵا، یان هایپەربۆڵا) دەبێت.</li>
+                    <li>هەڵبەت چەقی بارستاییەکە بە شێوەیەکی یەکسان لە بۆشاییدا دەجووڵێت.</li>
+                </ul>
+            </div>
+
+            <div class="step fade-in">
+                <h3>دەرەنجام</h3>
+                <p>
+                ئێستا زانیمان کە بە زیادکردنی تەنێکی تر بۆ سیستەمەکە، تەنها لە ڕێگەی هاوکێشەکانی جووڵەوە دەتوانین جووڵەی هەردوو تەنەکە لەژێر کاریگەری کێشکردنی دوولایەنەدا بەبێ هیچ ناڕوونییەک پێناسە بکەین. چارەسەرەکەش ئەوەیە کە لە ڕێگەی شیکردنەوەی هاوکێشەکانەوە دەتوانین کێشەی دوو-تەن کەم بکەینەوە بۆ پێکهاتەیەکی سادەتری وەک: جووڵەی چەقی بارستایی و جووڵەی ڕێژەیی. ئەم تێگەیشتنە دەکەینە بنەمایەک بۆ کێشە ئاڵۆزترەکانی، وەک کێشەی سێ-تەن و زیاتر، هەمان تێگەیشتن یارماتیمان دەدات بزانین ئەوەی کەوادەکات هەمان چارەسەر بۆ کێشەی سێ-تەن نەدۆزرێتەوە چییە!.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false}
+                ]
+            });
+
+            const steps = document.querySelectorAll('.step');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            steps.forEach(step => {
+                observer.observe(step);
+            });
+        });
+    </script>
+</body>
+</html>
